@@ -1949,8 +1949,50 @@ log.<span class="mt">error</span>(<span class="str">"Error occurred"</span>, exc
 <!-- ==================== INTERVIEW ==================== -->
 <section class="page" id="page-interview">
   <div class="bc"><span>Home</span><span class="sep">›</span><span>Interview Q&amp;A</span></div>
-  <h1>Interview Q&amp;A — 3-4 Years Level</h1>
-  <p>100+ questions. Categorized by topic. The <span class="pill p-yellow">Mid</span> and <span class="pill p-red">Adv</span> ones are most asked at your level.</p>
+  <h1>Interview Q&amp;A — Beginner to Advanced</h1>
+  <p>200+ questions covering all topics from beginner basics to advanced concepts. <span class="pill p-green">Basic</span> freshers &amp; beginners | <span class="pill p-yellow">Mid</span> 2-3 years | <span class="pill p-red">Adv</span> 3-5 years experience.</p>
+  <div class="box blue"><div class="box-title">📚 Topics Covered</div>
+  <p>Java Basics • Java OOP • Java 8 • Collections • Selenium Basics • Selenium Advanced • Framework Design (POM/PageFactory/DriverFactory) • TestNG • BDD Cucumber • CI/CD Maven Jenkins • Scenario-Based Questions • Quick-Fire Round</p></div>
+
+  <h2>☕ Java Basics — Beginner</h2>
+  <div class="acc-wrap">
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What is the difference between JDK, JRE, and JVM?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>JVM (Java Virtual Machine)</strong>: Runs compiled Java bytecode. Platform-specific. Provides memory management (GC), security sandbox.<br><br><strong>JRE (Java Runtime Environment)</strong>: JVM + core libraries. Needed to RUN Java programs. End users need JRE.<br><br><strong>JDK (Java Development Kit)</strong>: JRE + compiler (javac) + tools (javadoc, jdb). Needed to DEVELOP Java programs. Developers need JDK.<br><br>In automation: You install JDK. Maven/TestNG use JRE to run tests.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What is the difference between == and .equals() in Java?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>== (Reference comparison)</strong>: Checks if two variables point to the SAME object in memory (same address).<br><br><strong>.equals() (Content comparison)</strong>: Checks if two objects have the SAME VALUE/content. String class overrides equals() to compare characters.<br><br><code>String a = new String("hello");<br>String b = new String("hello");<br>a == b → false (different objects)<br>a.equals(b) → true (same content)</code><br><br>In automation: Always use .equals() to compare element text, page titles, URLs.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>Why is String immutable in Java?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">String objects cannot be changed after creation. Any modification creates a NEW String object.<br><br><strong>Why immutable?</strong> (1) String Pool — same literal can be shared safely. (2) Thread safety — multiple threads can use same String without synchronization. (3) Security — used in class loading, network connections — must not change. (4) HashCode caching — String's hashcode is cached on first call.<br><br><code>String s = "hello";<br>s.concat(" world"); // s is still "hello"!<br>s = s.concat(" world"); // Now s = "hello world" (new object)</code><br><br>Use <code>StringBuilder</code> for frequent string modifications in automation (building XPaths, URLs).</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What is the difference between String, StringBuilder, and StringBuffer?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>String</strong>: Immutable. Thread-safe. Slow for repeated concatenation (creates many objects). Use for fixed values — locators, URLs, assertions.<br><br><strong>StringBuilder</strong>: Mutable. NOT thread-safe. Fastest for single-threaded string manipulation. Use in automation for building dynamic XPaths, CSV rows, log messages.<br><br><strong>StringBuffer</strong>: Mutable. Thread-safe (synchronized). Slower than StringBuilder. Use when multiple threads modify same string (rare in automation).<br><br><code>// Building dynamic XPath
+StringBuilder xpath = new StringBuilder("//table");
+xpath.append("[@id='").append(tableId).append("']");
+xpath.append("//tr[").append(rowNum).append("]");</code></div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What are access modifiers in Java?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>public</strong>: Accessible from anywhere. Use for page methods called from tests.<br><strong>private</strong>: Accessible only within the class. Use for WebElement locators in Page classes (encapsulation).<br><strong>protected</strong>: Accessible within class + subclasses. Use in BasePage for driver, wait — accessible in child page classes.<br><strong>default (package-private)</strong>: Accessible within same package only. No keyword needed.<br><br>Framework pattern: WebElements are private. Methods are public. BaseTest fields (driver, wait) are protected for test subclasses.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What is the difference between ArrayList and LinkedList?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>ArrayList</strong>: Dynamic array. Fast random access O(1). Slow insert/delete in middle O(n). Good for read-heavy operations.<br><br><strong>LinkedList</strong>: Doubly linked nodes. Slow random access O(n). Fast insert/delete at ends O(1). Good for frequent add/remove.<br><br>In automation: ArrayList is used most — storing test data, WebElement lists, row values from tables. LinkedList used when you need queue/deque behavior.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What is method overloading vs method overriding?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>Overloading (Compile-time polymorphism)</strong>: Same method name, different parameters (type/count). In SAME class.<br><code>click(WebElement el) { ... }<br>click(By locator) { ... }<br>click(String xpath) { ... }</code><br><br><strong>Overriding (Runtime polymorphism)</strong>: Child class provides its own implementation of parent's method. Same name + same parameters.<br><code>// BasePage<br>public void waitForElement(WebElement el) { ... }<br>// LoginPage extends BasePage<br>@Override<br>public void waitForElement(WebElement el) { /* custom wait */ }</code><br><br>Overloading = same class, different params. Overriding = parent-child, same signature.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What is the static keyword in Java?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>static variable</strong>: One copy shared across all instances. <code>static WebDriver driver</code> — all tests share one driver (bad for parallel, use ThreadLocal instead).<br><br><strong>static method</strong>: Can be called without creating object. <code>DriverFactory.getDriver()</code>, <code>ConfigReader.get("url")</code>.<br><br><strong>static block</strong>: Runs once when class loads. Good for loading properties files.<br><br><strong>static class</strong>: Nested class that doesn't need outer class instance.<br><br>In automation: Use static for utility methods (ExcelUtils.readData()), singletons (ConfigReader), constants (BASE_URL).</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What is the difference between final, finally, and finalize?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>final</strong>: Keyword. Variable = constant (can't reassign). Method = can't override. Class = can't extend.<br><code>final String BASE_URL = "https://app.com"; // constant</code><br><br><strong>finally</strong>: Block in try-catch. ALWAYS executes — whether exception or not. Used to close resources.<br><code>try { driver.findElement(by); } catch(Exception e) { ... } finally { driver.quit(); }</code><br><br><strong>finalize()</strong>: Method in Object class. Called by GC before object is destroyed. Deprecated in Java 9+. Never rely on it for cleanup — use try-with-resources.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What are Collections and when do you use each one in automation?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>List (ArrayList)</strong>: Ordered, duplicates allowed. Store table rows, dropdown options, element lists.<br><strong>Set (HashSet)</strong>: No duplicates. Verify unique values — check no duplicate rows in table.<br><strong>Map (HashMap)</strong>: Key-value. Store test data, config properties, element-label pairs.<br><strong>LinkedHashMap</strong>: Ordered Map. Store ordered test steps or config.<br><strong>Queue/Deque</strong>: FIFO. Processing items in order.<br><br><code>// Practical usage
+List&lt;WebElement&gt; rows = table.findElements(By.tagName("tr"));
+Map&lt;String, String&gt; testData = new HashMap&lt;&gt;();
+Set&lt;String&gt; uniqueNames = rows.stream()
+  .map(WebElement::getText).collect(Collectors.toSet());</code></div></div>
+  </div>
 
   <h2>☕ Java OOP &amp; Core</h2>
   <div class="acc-wrap">
@@ -1973,8 +2015,31 @@ log.<span class="mt">error</span>(<span class="str">"Error occurred"</span>, exc
     <div class="acc-body"><strong>Checked</strong>: Subclasses of Exception (not RuntimeException). Must be handled with try-catch or declared with throws. Examples: IOException, SQLException. Compiler enforces handling.<br><br><strong>Unchecked (Runtime)</strong>: Subclasses of RuntimeException. No forced handling. Examples: NullPointerException, NoSuchElementException, StaleElementReferenceException.<br><br>Most Selenium exceptions are unchecked — NoSuchElementException, StaleElementReferenceException, TimeoutException.</div></div>
   </div>
 
-  <h2>🌐 Selenium WebDriver</h2>
+  <h2>🌐 Selenium WebDriver — Beginner</h2>
   <div class="acc-wrap">
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What is Selenium? What are its components?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">Selenium is an open-source tool for automating web browsers. It supports multiple browsers and languages.<br><br><strong>Components:</strong><br>1. <strong>Selenium WebDriver</strong>: Core API to control browsers programmatically. Most widely used.<br>2. <strong>Selenium Grid</strong>: Run tests in parallel on multiple machines/browsers.<br>3. <strong>Selenium IDE</strong>: Browser extension to record/playback tests (not for production).<br>4. <strong>Selenium RC</strong> (deprecated): Old architecture, replaced by WebDriver.<br><br>In interviews: Focus on WebDriver + Grid. Mention you use Selenium 4 with W3C protocol.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What is the difference between Selenium 3 and Selenium 4?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>Selenium 3:</strong> Used JSON Wire Protocol. Required separate ChromeDriver/GeckoDriver. Browser-specific protocol translation.<br><br><strong>Selenium 4:</strong><br>✅ W3C WebDriver standard (no translation needed — faster, more stable)<br>✅ Relative Locators (above, below, near, toLeftOf, toRightOf)<br>✅ Chrome DevTools Protocol (CDP) integration<br>✅ New Window/Tab APIs<br>✅ WebDriverManager built-in (Selenium Manager — no manual driver setup)<br>✅ Improved Grid 4 with Docker support<br>✅ Better screenshot and network interception APIs<br><br>Key answer: W3C protocol + Relative Locators + CDP integration.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What are the 8 locators in Selenium? Which one do you prefer?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>8 Locators:</strong><br>1. <strong>id</strong> — fastest, most reliable. Use when available.<br>2. <strong>name</strong> — good for form inputs.<br>3. <strong>className</strong> — use single class only (space in class name fails).<br>4. <strong>tagName</strong> — for all elements of a type (all links, all inputs).<br>5. <strong>linkText</strong> — exact text of anchor tag.<br>6. <strong>partialLinkText</strong> — partial text of anchor tag.<br>7. <strong>cssSelector</strong> — fast, flexible, widely used. Better performance than XPath.<br>8. <strong>xpath</strong> — most powerful, can traverse up the DOM (parent). Slightly slower.<br><br><strong>Preference order:</strong> id → CSS → XPath (only when CSS can't do it, e.g., text matching, parent traversal).</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What is the difference between findElement() and findElements()?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>findElement(By locator)</strong>: Returns single WebElement. Throws <code>NoSuchElementException</code> if not found. Throws <code>NoSuchElementException</code> if multiple exist (returns first).<br><br><strong>findElements(By locator)</strong>: Returns <code>List&lt;WebElement&gt;</code>. Returns EMPTY list (not exception) if nothing found. Used for tables, lists, repeating elements.<br><br><code>// Check element exists without exception:
+boolean exists = !driver.findElements(By.id("modal")).isEmpty();
+
+// Get all table rows:
+List&lt;WebElement&gt; rows = driver.findElements(By.cssSelector("table tr"));
+System.out.println("Row count: " + rows.size());</code></div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What is XPath? Difference between absolute and relative XPath?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>XPath</strong>: XML Path Language — used to navigate through HTML DOM to locate elements.<br><br><strong>Absolute XPath:</strong> Starts from root (html). Fragile — breaks if any parent changes.<br><code>/html/body/div[1]/form/input[2]</code><br><br><strong>Relative XPath:</strong> Starts from anywhere with //. Robust and preferred.<br><code>//input[@id='username']</code><br><br><strong>Key XPath functions:</strong><br>• <code>contains()</code>: <code>//button[contains(text(),'Submit')]</code><br>• <code>starts-with()</code>: <code>//input[starts-with(@id,'user')]</code><br>• <code>text()</code>: <code>//a[text()='Login']</code><br>• <code>and/or</code>: <code>//input[@type='text' and @name='email']</code><br>• Parent: <code>//span[text()='Error']/../input</code><br>• Following-sibling: <code>//label[text()='Email']/following-sibling::input</code></div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What is CSS Selector? How is it different from XPath?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>CSS Selector:</strong> Uses CSS styling syntax to locate elements. Faster than XPath in most browsers.<br><br><strong>Common patterns:</strong><br>• By ID: <code>#username</code><br>• By class: <code>.btn-primary</code><br>• By attribute: <code>input[type='email']</code><br>• Child: <code>form > input</code><br>• Contains: <code>input[id*='user']</code> (* = contains)<br>• Starts with: <code>input[id^='user']</code> (^ = starts)<br>• Ends with: <code>input[id$='name']</code> ($ = ends)<br><br><strong>CSS vs XPath:</strong><br>• CSS: faster, cleaner syntax, forward traversal only<br>• XPath: can go UP the DOM (parent/ancestor), text matching, more powerful<br>• Prefer CSS for simple locators, XPath when you need parent traversal or text matching.</div></div>
+
     <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>Difference between driver.close() and driver.quit()?<span class="acc-arrow">▼</span></button>
     <div class="acc-body"><code>driver.close()</code>: Closes the current focused browser window. If there are multiple windows, the session remains active. <br><code>driver.quit()</code>: Closes ALL browser windows opened during the test and destroys the WebDriver session completely. Always use quit() in @AfterMethod/@AfterClass to prevent orphaned browser processes.</div></div>
 
@@ -1995,10 +2060,133 @@ log.<span class="mt">error</span>(<span class="str">"Error occurred"</span>, exc
 
     <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>How do you handle flaky tests?<span class="acc-arrow">▼</span></button>
     <div class="acc-body">(1) <strong>Root cause first</strong>: Is it a timing issue (fix with explicit wait), data issue, or environment issue?<br>(2) <strong>Replace Thread.sleep with explicit waits</strong> — wait for actual conditions<br>(3) <strong>IRetryAnalyzer</strong> — auto-retry flaky tests 1-2 times<br>(4) <strong>Wait for AJAX</strong> — wait for loaders/spinners to disappear<br>(5) <strong>Scroll to element</strong> before interacting<br>(6) <strong>JS click</strong> for click-intercepted issues<br>(7) <strong>Stable locators</strong> — avoid brittle XPaths<br>(8) <strong>Test isolation</strong> — each test creates its own state</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>How do you handle alerts, frames, and multiple windows in Selenium?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>Alerts:</strong><br><code>Alert alert = driver.switchTo().alert();<br>alert.getText(); // read message<br>alert.accept();  // click OK<br>alert.dismiss(); // click Cancel<br>alert.sendKeys("text"); // for prompt alerts</code><br><br><strong>Frames/iFrames:</strong><br><code>driver.switchTo().frame("frameName");    // by name<br>driver.switchTo().frame(0);              // by index<br>driver.switchTo().frame(frameElement);   // by element<br>driver.switchTo().defaultContent();      // back to main</code><br><br><strong>Multiple Windows:</strong><br><code>String parent = driver.getWindowHandle();<br>Set&lt;String&gt; handles = driver.getWindowHandles();<br>for(String handle : handles) {<br>  if(!handle.equals(parent)) driver.switchTo().window(handle);<br>}<br>driver.switchTo().window(parent); // back to parent</code></div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What is JavascriptExecutor and when do you use it?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">Interface that lets you execute JavaScript code in the browser context. Used when normal WebDriver actions fail.<br><br><strong>Common uses:</strong><br><code>JavascriptExecutor js = (JavascriptExecutor) driver;
+
+// Click hidden/overlaid element
+js.executeScript("arguments[0].click();", element);
+
+// Scroll to element
+js.executeScript("arguments[0].scrollIntoView(true);", element);
+
+// Scroll to bottom
+js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
+// Set value (bypasses read-only)
+js.executeScript("arguments[0].value='test@email.com';", input);
+
+// Get page title/URL
+String title = (String) js.executeScript("return document.title;");
+
+// Highlight element (for debugging)
+js.executeScript("arguments[0].style.border='3px solid red'", element);</code><br><br>Use JS executor as last resort — prefer standard WebDriver API when possible.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What is the Actions class? List common actions used in automation.<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">Actions class handles complex user gestures — mouse movements, drag-drop, keyboard combos.<br><br><code>Actions actions = new Actions(driver);
+
+// Hover over element
+actions.moveToElement(menuItem).perform();
+
+// Right click
+actions.contextClick(element).perform();
+
+// Double click
+actions.doubleClick(element).perform();
+
+// Drag and drop
+actions.dragAndDrop(source, target).perform();
+
+// Keyboard shortcuts
+actions.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).perform();
+
+// Click and hold
+actions.clickAndHold(element).moveToElement(target).release().perform();
+
+// Chain multiple actions
+actions.moveToElement(menu).click().moveToElement(subMenu).click().perform();</code></div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>How do you take a screenshot on test failure?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><code>// Method in BasePage or utility class
+public static String captureScreenshot(WebDriver driver, String testName) {
+    TakesScreenshot ts = (TakesScreenshot) driver;
+    File src = ts.getScreenshotAs(OutputType.FILE);
+    String path = "screenshots/" + testName + "_" + System.currentTimeMillis() + ".png";
+    FileUtils.copyFile(src, new File(path));
+    return path;
+}
+
+// As Base64 for ExtentReports:
+String base64 = ts.getScreenshotAs(OutputType.BASE64);
+test.addScreenCaptureFromBase64String(base64);</code><br><br>In TestNG Listener's <code>onTestFailure()</code>:<br><code>public void onTestFailure(ITestResult result) {
+    WebDriver driver = DriverFactory.getDriver();
+    captureScreenshot(driver, result.getName());
+}</code></div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>How do you handle dropdowns in Selenium?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>HTML &lt;select&gt; dropdowns — use Select class:</strong><br><code>Select dropdown = new Select(driver.findElement(By.id("country")));
+dropdown.selectByVisibleText("India");
+dropdown.selectByValue("IN");
+dropdown.selectByIndex(2);
+dropdown.getOptions(); // list of all options
+dropdown.getFirstSelectedOption().getText();</code><br><br><strong>Custom dropdowns (not &lt;select&gt; tag) — click and choose:</strong><br><code>driver.findElement(By.id("dropdown-btn")).click(); // open
+driver.findElement(By.xpath("//li[text()='India']")).click(); // select</code><br><br><strong>Multi-select:</strong><br><code>if(dropdown.isMultiple()) {
+    dropdown.selectByVisibleText("Option1");
+    dropdown.selectByVisibleText("Option2");
+}</code></div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>What are Relative Locators in Selenium 4?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">Selenium 4 introduced relative locators to find elements based on their position relative to another element — mimics how humans describe locations.<br><br><code>import static org.openqa.selenium.support.locators.RelativeLocator.*;
+
+WebElement emailLabel = driver.findElement(By.cssSelector("label[for='email']"));
+
+// Find input BELOW the email label
+WebElement emailInput = driver.findElement(
+    with(By.tagName("input")).below(emailLabel));
+
+// Find element ABOVE
+WebElement el = driver.findElement(with(By.tagName("input")).above(submitBtn));
+
+// Find element to RIGHT OF
+WebElement price = driver.findElement(with(By.tagName("td")).toRightOf(nameCell));
+
+// Find element NEAR (within 50px)
+WebElement hint = driver.findElement(with(By.tagName("span")).near(inputField));</code><br><br>Best use: Forms where labels and inputs are adjacent but don't share attributes.</div></div>
   </div>
 
   <h2>🏗️ Framework Design</h2>
   <div class="acc-wrap">
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What is the difference between POM and PageFactory?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>Page Object Model (POM)</strong>: Design pattern. Each page = one class. Locators defined using <code>By</code> objects. Elements found using <code>driver.findElement(By.id("..."))</code> at the time of use (fresh lookup every call).<br><br><strong>PageFactory</strong>: Implementation of POM. Uses <code>@FindBy</code> annotations + <code>PageFactory.initElements()</code>. Elements are lazy-initialized (found on first use). Supports <code>@CacheLookup</code> to cache element after first find.<br><br><code>// POM style
+By usernameBy = By.id("username");
+driver.findElement(usernameBy).sendKeys("admin");
+
+// PageFactory style
+@FindBy(id = "username")
+WebElement usernameField;
+
+PageFactory.initElements(driver, this); // in constructor
+usernameField.sendKeys("admin");</code><br><br>Caution: <code>@CacheLookup</code> can cause StaleElementReferenceException on dynamic pages.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What is BaseTest and BasePage? Why do we need them?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>BaseTest:</strong> Parent class for all test classes. Contains @BeforeMethod (init driver, open URL) and @AfterMethod (quit driver, capture screenshot on failure). Ensures every test starts with clean state.<br><br><strong>BasePage:</strong> Parent class for all Page classes. Contains shared methods: click(), type(), waitForElement(), isDisplayed(), getText(), scrollTo(). Test code stays clean — page methods handle WebDriver interactions.<br><br><code>// BaseTest
+public class BaseTest {
+    @BeforeMethod
+    public void setUp() {
+        DriverFactory.initDriver(ConfigReader.get("browser"));
+        DriverFactory.getDriver().get(ConfigReader.get("url"));
+    }
+    @AfterMethod
+    public void tearDown(ITestResult result) {
+        if(result.getStatus() == ITestResult.FAILURE)
+            captureScreenshot(result.getName());
+        DriverFactory.quitDriver();
+    }
+}</code></div></div>
+
     <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>How did you implement parallel execution in your framework?<span class="acc-arrow">▼</span></button>
     <div class="acc-body">In testng.xml: <code>parallel="methods" thread-count="4"</code>. WebDriver is stored in <code>ThreadLocal&lt;WebDriver&gt;</code> in DriverFactory — ensures each thread gets its own browser instance. ExtentReports tests stored in ThreadLocal&lt;ExtentTest&gt; for thread-safe report logging. Remove ThreadLocal in @AfterMethod to prevent memory leaks.</div></div>
 
@@ -2017,14 +2205,321 @@ log.<span class="mt">error</span>(<span class="str">"Error occurred"</span>, exc
 
   <h2>🧪 TestNG Questions</h2>
   <div class="acc-wrap">
-    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What is the difference between @BeforeMethod and @BeforeClass?<span class="acc-arrow">▼</span></button>
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What are TestNG annotations and their execution order?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">TestNG annotations control test lifecycle. Execution order:<br><br><code>@BeforeSuite    → runs once before all suites
+@BeforeTest     → runs before &lt;test&gt; tag in testng.xml
+@BeforeClass    → runs once before all methods in a class
+@BeforeMethod   → runs before EACH test method
+@Test           → the actual test
+@AfterMethod    → runs after EACH test method
+@AfterClass     → runs once after all methods in a class
+@AfterTest      → runs after &lt;test&gt; tag
+@AfterSuite     → runs once after all suites</code><br><br>Key attributes: <code>@Test(priority=1, groups="smoke", enabled=true, timeOut=5000, retryAnalyzer=RetryAnalyzer.class, dependsOnMethods="loginTest")</code></div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What is the difference between @BeforeMethod and @BeforeClass?<span class="acc-arrow">▼</span></button>
     <div class="acc-body"><code>@BeforeClass</code>: Runs once before all test methods in the class. Use for expensive one-time setup (launching browser, DB connection).<br><code>@BeforeMethod</code>: Runs before EACH test method. Use for per-test setup (navigate to URL, login, clear state).<br><br>In parallel testing: @BeforeMethod is safer because each thread gets its own setup/teardown cycle.</div></div>
 
-    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What is the difference between Hard Assert and Soft Assert?<span class="acc-arrow">▼</span></button>
-    <div class="acc-body"><strong>Hard Assert</strong> (org.testng.Assert): Stops test execution immediately on first failure. Use when subsequent steps depend on this assertion passing.<br><br><strong>Soft Assert</strong> (org.testng.asserts.SoftAssert): Collects all failures, continues execution. Must call <code>softAssert.assertAll()</code> at the end — reports all failures. Use when you want to verify multiple independent conditions in one test.</div></div>
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What is the difference between Hard Assert and Soft Assert?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>Hard Assert</strong> (org.testng.Assert): Stops test execution immediately on first failure. Use when subsequent steps depend on this assertion passing.<br><br><strong>Soft Assert</strong> (org.testng.asserts.SoftAssert): Collects all failures, continues execution. Must call <code>softAssert.assertAll()</code> at the end — reports all failures. Use when you want to verify multiple independent conditions in one test.<br><br><code>SoftAssert sa = new SoftAssert();
+sa.assertEquals(actualTitle, "Dashboard");
+sa.assertTrue(logoutBtn.isDisplayed());
+sa.assertAll(); // reports all failures at once</code></div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What is @DataProvider and how does it work?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">@DataProvider supplies test data to @Test methods. The method returns <code>Object[][]</code> — outer array = rows (test runs), inner array = columns (parameters).<br><br><code>@DataProvider(name = "loginData")
+public Object[][] getData() {
+    return new Object[][] {
+        {"admin@test.com", "Admin@123", true},
+        {"user@test.com",  "User@123",  true},
+        {"wrong@test.com", "wrong",     false}
+    };
+}
+
+@Test(dataProvider = "loginData")
+public void loginTest(String email, String password, boolean shouldPass) {
+    loginPage.login(email, password);
+    if(shouldPass) Assert.assertTrue(dashboard.isLoaded());
+    else Assert.assertTrue(loginPage.getError().isDisplayed());
+}</code><br><br>For Excel: return ExcelUtils.readData("testdata.xlsx", "Login").</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What are TestNG Groups? How do you run only smoke tests?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">Groups let you categorize tests and run specific subsets.<br><br><code>@Test(groups = {"smoke", "regression"})
+public void loginTest() { ... }
+
+@Test(groups = {"regression"})
+public void cartTest() { ... }</code><br><br>Run only smoke in testng.xml:<br><code>&lt;groups&gt;
+  &lt;run&gt;
+    &lt;include name="smoke"/&gt;
+  &lt;/run&gt;
+&lt;/groups&gt;</code><br><br>Run from Maven: <code>mvn test -Dgroups=smoke</code><br><br>Best practice: Define groups — smoke (critical path ~5 min), regression (full suite), sanity (post-deploy check).</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What is dependsOnMethods in TestNG? What happens if the dependency fails?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><code>@Test(dependsOnMethods = "loginTest")</code> ensures loginTest runs first. If loginTest FAILS, the dependent test is SKIPPED (not failed).<br><br><code>@Test
+public void loginTest() { ... } // must pass
+
+@Test(dependsOnMethods = "loginTest")
+public void addToCartTest() { ... } // skipped if login fails
+
+@Test(dependsOnMethods = "loginTest", alwaysRun = true)
+public void logoutTest() { ... } // runs EVEN if login fails</code><br><br>⚠️ Use sparingly — creates test coupling. Prefer independent tests. Use for true sequential flows (login → checkout → payment).</div></div>
 
     <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>How do you implement data-driven testing with @DataProvider returning Excel data?<span class="acc-arrow">▼</span></button>
     <div class="acc-body">Create ExcelUtils class using Apache POI. readData(filePath, sheetName) opens workbook, iterates rows/columns (skip row 0 as header), returns Object[][]. Create @DataProvider that calls ExcelUtils.readData(). Annotate @Test with dataProvider="name". TestNG calls the test once per row, passing column values as parameters. Use parallel=true on @DataProvider for faster execution.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>How do you run TestNG tests in parallel? What are the different parallel modes?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">Configure in testng.xml:<br><br><code>&lt;suite name="Suite" parallel="methods" thread-count="4"&gt;</code><br><br><strong>Parallel modes:</strong><br>• <code>methods</code>: Each @Test method runs in separate thread. Most granular.<br>• <code>classes</code>: Each test class runs in separate thread.<br>• <code>tests</code>: Each &lt;test&gt; tag runs in separate thread.<br>• <code>instances</code>: Each instance of a class runs in separate thread.<br><br><strong>Required for parallel safety:</strong><br>1. ThreadLocal&lt;WebDriver&gt; in DriverFactory<br>2. ThreadLocal&lt;ExtentTest&gt; in TestListener<br>3. No shared mutable static state<br>4. @BeforeMethod and @AfterMethod (not @BeforeClass)<br>5. Each test creates its own test data</div></div>
+  </div>
+
+  <h2>🥒 BDD &amp; Cucumber Questions</h2>
+  <div class="acc-wrap">
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What is BDD? How is it different from TDD?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>TDD (Test-Driven Development)</strong>: Write failing unit test → write code to pass it → refactor. Developer-focused. Tests are code.<br><br><strong>BDD (Behavior-Driven Development)</strong>: Write behavior scenarios in plain English (Gherkin) → write step definitions → automate. Collaboration between devs, QA, business. Tests are readable by non-technical stakeholders.<br><br>BDD in automation: Cucumber reads .feature files (Gherkin) → maps to step definition methods → executes Selenium/API code.<br><br><strong>Given</strong>: precondition/context<br><strong>When</strong>: action/event<br><strong>Then</strong>: expected outcome<br><strong>And/But</strong>: additional steps</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What is Gherkin? Write a sample feature file.<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">Gherkin is a plain-English language for writing BDD scenarios. Keywords: Feature, Scenario, Given, When, Then, And, But, Background, Scenario Outline, Examples.<br><br><code># login.feature
+Feature: User Login
+  As a registered user
+  I want to login to the application
+  So that I can access my dashboard
+
+  Background:
+    Given I am on the login page
+
+  Scenario: Successful login with valid credentials
+    When I enter username "admin@test.com" and password "Admin@123"
+    And I click the Login button
+    Then I should see the Dashboard page
+    And the welcome message should contain "Admin"
+
+  Scenario Outline: Login with multiple users
+    When I enter username "&lt;email&gt;" and password "&lt;password&gt;"
+    And I click the Login button
+    Then the result should be "&lt;result&gt;"
+
+    Examples:
+      | email            | password  | result  |
+      | admin@test.com   | Admin@123 | success |
+      | wrong@test.com   | wrong123  | failure |</code></div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What are Cucumber Hooks? What is the difference between @Before and @BeforeStep?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>Hooks</strong>: Code that runs at specific points in test lifecycle. Defined in a class annotated with @CucumberOptions or found via glue path.<br><br><code>@Before        // runs before each Scenario
+@After         // runs after each Scenario
+@BeforeStep    // runs before each Step (Cucumber 6+)
+@AfterStep     // runs after each Step</code><br><br><code>@Before
+public void setUp(Scenario scenario) {
+    driver = DriverFactory.initDriver("chrome");
+}
+
+@After
+public void tearDown(Scenario scenario) {
+    if(scenario.isFailed()) {
+        byte[] screenshot = ((TakesScreenshot)driver)
+            .getScreenshotAs(OutputType.BYTES);
+        scenario.attach(screenshot, "image/png", "failure");
+    }
+    DriverFactory.quitDriver();
+}</code><br><br>Use <code>@Before(order=1)</code> to control hook execution order. Tags: <code>@Before("@smoke")</code> runs only for @smoke scenarios.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What is the difference between Scenario and Scenario Outline?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>Scenario</strong>: Single test case with fixed data. Runs once.<br><br><strong>Scenario Outline</strong>: Template with placeholders (&lt;variable&gt;). Runs once per row in Examples table. Used for data-driven BDD tests.<br><br><code>Scenario Outline: Search products
+  Given I am on the search page
+  When I search for "&lt;product&gt;"
+  Then I should see "&lt;count&gt;" results
+
+  Examples:
+    | product  | count |
+    | iPhone   | 5     |
+    | Samsung  | 8     |
+    | Nokia    | 2     |</code><br><br>This runs 3 tests — one per row. Much cleaner than 3 separate Scenarios.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What are Cucumber Tags? How do you run only specific scenarios?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">Tags annotate features/scenarios for selective execution.<br><br><code># In feature file:
+@smoke @regression
+Feature: Login
+
+  @smoke
+  Scenario: Valid login
+
+  @regression @wip
+  Scenario: Invalid login</code><br><br><code>// In TestRunner:
+@CucumberOptions(
+    tags = "@smoke",           // run only smoke
+    tags = "@smoke and @api",  // AND condition
+    tags = "@smoke or @sanity",// OR condition
+    tags = "not @wip"          // exclude WIP
+)</code><br><br>Run from Maven: <code>mvn test -Dcucumber.filter.tags="@smoke"</code></div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>How do you share state between step definitions in Cucumber?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">Cucumber creates a new instance of each step definition class per scenario. To share state:<br><br><strong>1. PicoContainer (recommended):</strong><br><code>// SharedContext.java
+public class SharedContext {
+    public WebDriver driver;
+    public String authToken;
+}
+
+// LoginSteps.java
+public class LoginSteps {
+    SharedContext ctx;
+    public LoginSteps(SharedContext ctx) { this.ctx = ctx; }
+
+    @Given("I login")
+    public void login() { ctx.driver.findElement(...); }
+}
+
+// DashboardSteps.java
+public class DashboardSteps {
+    SharedContext ctx;
+    public DashboardSteps(SharedContext ctx) { this.ctx = ctx; }
+}</code><br>Add PicoContainer dependency — Cucumber auto-injects shared instances.<br><br><strong>2. Static variables</strong> (simpler but not thread-safe)<br><strong>3. World object pattern</strong></div></div>
+  </div>
+
+  <h2>🚀 CI/CD &amp; Maven Questions</h2>
+  <div class="acc-wrap">
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What is Maven? What is the purpose of pom.xml?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>Maven</strong>: Build automation tool for Java. Manages project dependencies, compilation, testing, packaging.<br><br><strong>pom.xml (Project Object Model)</strong>: Config file that defines:<br>• <code>&lt;dependencies&gt;</code>: Libraries (Selenium, TestNG, POI, etc.)<br>• <code>&lt;plugins&gt;</code>: maven-surefire-plugin (runs TestNG), maven-compiler-plugin<br>• <code>&lt;properties&gt;</code>: Java version, encoding<br>• <code>&lt;profiles&gt;</code>: Different configs for dev/qa/prod<br><br>Key commands:<br><code>mvn clean test                    # clean + run tests
+mvn test -Dbrowser=firefox         # pass system property
+mvn test -Dsurefire.suiteXmlFiles=smoke.xml  # specific suite
+mvn compile                        # compile only
+mvn install                        # build + install to local repo</code></div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What is Surefire plugin and how do you configure it for TestNG?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">Maven Surefire plugin runs tests during <code>mvn test</code> phase. For TestNG:<br><br><code>&lt;plugin&gt;
+  &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+  &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
+  &lt;version&gt;3.1.2&lt;/version&gt;
+  &lt;configuration&gt;
+    &lt;suiteXmlFiles&gt;
+      &lt;suiteXmlFile&gt;testng.xml&lt;/suiteXmlFile&gt;
+    &lt;/suiteXmlFiles&gt;
+    &lt;systemPropertyVariables&gt;
+      &lt;browser&gt;${browser}&lt;/browser&gt;
+      &lt;env&gt;${env}&lt;/env&gt;
+    &lt;/systemPropertyVariables&gt;
+  &lt;/configuration&gt;
+&lt;/plugin&gt;</code><br><br>Run with custom suite: <code>mvn test -Dsurefire.suiteXmlFiles=smoke-testng.xml</code></div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>How do you run tests headlessly in CI?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">CI servers (Jenkins, GitHub Actions) have no display. Run Chrome in headless mode:<br><br><code>ChromeOptions options = new ChromeOptions();
+options.addArguments("--headless=new");       // new headless (Chrome 112+)
+options.addArguments("--no-sandbox");          // required in Docker/CI
+options.addArguments("--disable-dev-shm-usage"); // prevent memory issues
+options.addArguments("--window-size=1920,1080");  // set viewport
+options.addArguments("--disable-gpu");         // older systems
+
+WebDriver driver = new ChromeDriver(options);</code><br><br>In GitHub Actions — use <code>runs-on: ubuntu-latest</code> with <code>--headless=new</code>.<br>In Docker — use <code>selenium/standalone-chrome</code> image which includes Xvfb virtual display.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>Explain your Jenkins pipeline setup for Selenium tests.<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><code>pipeline {
+  agent any
+  parameters {
+    choice(name: 'BROWSER', choices: ['chrome','firefox'], description: '')
+    choice(name: 'ENV', choices: ['qa','staging'], description: '')
+  }
+  stages {
+    stage('Checkout') { steps { git branch:'main', url:'...' } }
+    stage('Build')    { steps { sh 'mvn clean compile -DskipTests' } }
+    stage('Test') {
+      steps {
+        sh "mvn test -Dbrowser=${params.BROWSER} -Denv=${params.ENV}"
+      }
+    }
+    stage('Reports') {
+      steps { publishHTML(target:[reportDir:'target/extent-reports', reportFiles:'index.html']) }
+    }
+  }
+  post {
+    always   { junit 'target/surefire-reports/*.xml' }
+    failure  { emailext to:'team@company.com', subject:'Build Failed' }
+  }
+}</code></div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>What is Selenium Grid? How does it work?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">Selenium Grid runs tests in parallel across multiple machines and browsers simultaneously.<br><br><strong>Architecture (Grid 4):</strong><br>• <strong>Hub</strong>: Central server — receives test requests, routes to nodes<br>• <strong>Node</strong>: Machine with browser — registers with hub, executes tests<br>• <strong>Router</strong>: Routes requests (Grid 4 uses same-server routing)<br><br><strong>Grid 4 with Docker Compose:</strong><br><code>services:
+  selenium-hub:
+    image: selenium/hub:4.15.0
+    ports: ["4444:4444"]
+
+  chrome-node:
+    image: selenium/node-chrome:4.15.0
+    depends_on: [selenium-hub]
+    environment:
+      SE_EVENT_BUS_HOST: selenium-hub</code><br><br><strong>Connect to Grid in code:</strong><br><code>DesiredCapabilities caps = new DesiredCapabilities();
+caps.setBrowserName("chrome");
+driver = new RemoteWebDriver(new URL("http://hub:4444/wd/hub"), caps);</code></div></div>
+  </div>
+
+  <h2>💡 Scenario-Based Questions</h2>
+  <div class="acc-wrap">
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>How would you automate a file upload scenario?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>For standard &lt;input type="file"&gt;:</strong><br><code>WebElement fileInput = driver.findElement(By.cssSelector("input[type='file']"));
+fileInput.sendKeys("/absolute/path/to/file.pdf"); // sendKeys on file input</code><br><br><strong>For custom upload buttons (not input[type=file]):</strong><br>1. Use Robot class to interact with OS file dialog<br>2. Use AutoIt (Windows) to handle native dialogs<br>3. Use JavaScript to make hidden input visible, then sendKeys<br><br><code>// Make hidden input visible via JS
+js.executeScript("arguments[0].style.display='block'", hiddenInput);
+hiddenInput.sendKeys(filePath);</code><br><br>Best approach: Always look for the underlying <code>input[type=file]</code> — it can receive sendKeys even if hidden/styled.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>How do you handle a scenario where elements load after AJAX calls?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><code>// Wait for spinner/loader to disappear
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".spinner")));
+
+// Wait for element to appear
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("results")));
+
+// Wait for element count to be &gt; 0
+wait.until(driver -> driver.findElements(By.cssSelector(".result-row")).size() > 0);
+
+// Wait for AJAX to complete via JS
+wait.until(driver -> ((JavascriptExecutor) driver)
+    .executeScript("return jQuery.active == 0").equals(true));
+
+// Wait for text to change
+wait.until(ExpectedConditions.textToBePresentInElement(statusEl, "Completed"));</code><br><br>Never use Thread.sleep — it's hardcoded, wastes time, and is unreliable.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>How do you verify data in a table with 100+ rows?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><code>// Get all rows
+List&lt;WebElement&gt; rows = driver.findElements(By.cssSelector("table tbody tr"));
+
+// Get specific column value from each row (Java 8 Streams)
+List&lt;String&gt; names = rows.stream()
+    .map(row -> row.findElement(By.cssSelector("td:nth-child(2)")).getText())
+    .collect(Collectors.toList());
+
+// Verify sorted order
+List&lt;String&gt; sorted = new ArrayList&lt;&gt;(names);
+Collections.sort(sorted);
+Assert.assertEquals(names, sorted, "Table not sorted by name");
+
+// Verify specific row data
+Optional&lt;WebElement&gt; targetRow = rows.stream()
+    .filter(row -> row.getText().contains("John Doe"))
+    .findFirst();
+Assert.assertTrue(targetRow.isPresent(), "Row not found");
+
+// Verify no duplicates
+Set&lt;String&gt; unique = new HashSet&lt;&gt;(names);
+Assert.assertEquals(names.size(), unique.size(), "Duplicate rows found");</code></div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>How do you handle browser cookies and sessions in your tests?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><code>// Get all cookies
+Set&lt;Cookie&gt; cookies = driver.manage().getCookies();
+
+// Get specific cookie
+Cookie authCookie = driver.manage().getCookieNamed("auth_token");
+
+// Add cookie (bypass login for tests)
+Cookie cookie = new Cookie("auth_token", "eyJhbG...", "app.com", "/", null);
+driver.manage().addCookie(cookie);
+driver.navigate().refresh(); // refresh to apply
+
+// Delete specific cookie
+driver.manage().deleteCookieNamed("session_id");
+
+// Delete all cookies (clean state between tests)
+driver.manage().deleteAllCookies();
+
+// Practical pattern — save login session:
+loginPage.login("admin", "pass");
+Set&lt;Cookie&gt; session = driver.manage().getCookies();
+// In next test - restore session instead of re-logging in
+session.forEach(c -> driver.manage().addCookie(c));</code></div></div>
   </div>
 
   <h2>⚡ Quick-Fire Round</h2>
@@ -2046,6 +2541,30 @@ log.<span class="mt">error</span>(<span class="str">"Error occurred"</span>, exc
       <tr><td>What is driver.manage().deleteAllCookies() used for?</td><td>Clear session/auth cookies between tests</td></tr>
       <tr><td>How to handle SSL certificate errors?</td><td><code>ChromeOptions.setAcceptInsecureCerts(true)</code></td></tr>
       <tr><td>What is Abstract XPath vs Relative XPath?</td><td>Absolute starts from /html, Relative starts from //. Always use relative.</td></tr>
+      <tr><td>How do you check if a checkbox is selected?</td><td><code>element.isSelected()</code> — returns boolean</td></tr>
+      <tr><td>How do you get all options from a dropdown?</td><td><code>new Select(el).getOptions()</code> — returns List&lt;WebElement&gt;</td></tr>
+      <tr><td>What is WebDriverManager?</td><td>Library that auto-downloads browser drivers. No manual chromedriver setup needed.</td></tr>
+      <tr><td>How to maximize browser window?</td><td><code>driver.manage().window().maximize()</code></td></tr>
+      <tr><td>What is Page Object Model?</td><td>Design pattern — each web page = one Java class with locators + action methods</td></tr>
+      <tr><td>What annotation runs before each test?</td><td><code>@BeforeMethod</code> in TestNG</td></tr>
+      <tr><td>How to get current URL?</td><td><code>driver.getCurrentUrl()</code></td></tr>
+      <tr><td>How to get page title?</td><td><code>driver.getTitle()</code></td></tr>
+      <tr><td>What is @FindBy?</td><td>PageFactory annotation to define element locators declaratively</td></tr>
+      <tr><td>How to switch to a frame by index?</td><td><code>driver.switchTo().frame(0)</code></td></tr>
+      <tr><td>What is NoSuchElementException?</td><td>Thrown when element not found in DOM. Fix: check locator, use explicit wait.</td></tr>
+      <tr><td>What is ElementNotInteractableException?</td><td>Element found but can't interact — hidden/disabled. Fix: wait for visibility, use JS click.</td></tr>
+      <tr><td>What is the use of @Listeners in TestNG?</td><td>Registers TestNG listener class to intercept test events (start, pass, fail)</td></tr>
+      <tr><td>What is Cucumber's @CucumberOptions?</td><td>Annotation on TestRunner to configure features path, glue, tags, plugin (reports)</td></tr>
+      <tr><td>How to run a single Cucumber scenario?</td><td>Tag it with @focus, set tags="@focus" in runner, or use line number in feature file</td></tr>
+      <tr><td>What is Background in Cucumber?</td><td>Steps that run before EVERY scenario in a feature file. Like @Before but in Gherkin.</td></tr>
+      <tr><td>What is the difference between smoke and sanity testing?</td><td>Smoke: broad, shallow check after new build. Sanity: narrow, focused check after bug fix.</td></tr>
+      <tr><td>How to get attribute value of an element?</td><td><code>element.getAttribute("value")</code> or <code>element.getAttribute("href")</code></td></tr>
+      <tr><td>How to check if element is visible?</td><td><code>element.isDisplayed()</code> — true if visible on page</td></tr>
+      <tr><td>What is Collections.sort() vs Comparator?</td><td>sort() uses natural order. Comparator for custom order. <code>list.sort(Comparator.comparing(String::toLowerCase))</code></td></tr>
+      <tr><td>What is Optional in Java 8?</td><td>Container for nullable values. Prevents NullPointerException. Use orElse(), orElseThrow(), ifPresent().</td></tr>
+      <tr><td>What is @Step in Allure?</td><td>Annotation on page methods — shows step-by-step execution in Allure report</td></tr>
+      <tr><td>How to read system property in Java?</td><td><code>System.getProperty("browser")</code> — reads -Dbrowser=chrome from command line</td></tr>
+      <tr><td>What is Maven lifecycle order?</td><td>validate → compile → test → package → verify → install → deploy</td></tr>
     </tbody>
   </table></div>
 
