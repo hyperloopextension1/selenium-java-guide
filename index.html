@@ -1,0 +1,2228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Selenium + Java — 3.5 Year Experience Guide</title>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<header id="topbar">
+  <button id="menu-toggle">☰</button>
+  <a class="logo" href="#home"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="url(#g)" stroke-width="1.5"/><path d="M9 16 Q16 7 23 16 Q16 25 9 16Z" fill="url(#g)" opacity=".85"/><defs><linearGradient id="g" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#4f8ef7"/><stop offset="1" stop-color="#7c5cbf"/></linearGradient></defs></svg><span class="logo-text">Selenium + Java</span></a>
+  <div id="search-wrap">
+    <span class="sico">🔍</span>
+    <input id="search" type="text" placeholder="Search topics, concepts…" autocomplete="off"/>
+    <div id="search-results"></div>
+  </div>
+  <span class="exp-badge">🎯 3-4 Yrs Level</span>
+  <button class="topbar-btn" id="theme-btn">☀️</button>
+</header>
+<div id="overlay"></div>
+<div id="layout">
+
+<!-- ========== SIDEBAR ========== -->
+<nav id="sidebar">
+  <div class="nav-group">
+    <div class="nav-group-title">Start Here</div>
+    <button class="nav-item active" data-page="home"><span class="nav-icon">🏠</span>Home &amp; Roadmap</button>
+  </div>
+  <div class="nav-group">
+    <div class="nav-group-title">Java Core</div>
+    <button class="nav-item" data-page="java-oop"><span class="nav-icon">☕</span>OOP Concepts</button>
+    <button class="nav-item" data-page="java-collections"><span class="nav-icon">📦</span>Collections</button>
+    <button class="nav-item" data-page="java8"><span class="nav-icon">⚡</span>Java 8 Features</button>
+    <button class="nav-item" data-page="java-exceptions"><span class="nav-icon">⚠️</span>Exception Handling</button>
+    <button class="nav-item" data-page="java-strings"><span class="nav-icon">🔤</span>Strings &amp; StringBuilder</button>
+    <button class="nav-item" data-page="java-interfaces"><span class="nav-icon">🔌</span>Interfaces &amp; Abstract</button>
+  </div>
+  <div class="nav-group">
+    <div class="nav-group-title">Selenium</div>
+    <button class="nav-item" data-page="intro"><span class="nav-icon">📖</span>Intro &amp; Architecture</button>
+    <button class="nav-item" data-page="setup"><span class="nav-icon">⚙️</span>Setup &amp; Maven</button>
+    <button class="nav-item" data-page="locators"><span class="nav-icon">🎯</span>Locators</button>
+    <button class="nav-item" data-page="xpath"><span class="nav-icon">🔎</span>XPath &amp; CSS</button>
+    <button class="nav-item" data-page="webdriver"><span class="nav-icon">🌐</span>WebDriver API</button>
+    <button class="nav-item" data-page="waits"><span class="nav-icon">⏳</span>Waits</button>
+    <button class="nav-item" data-page="actions"><span class="nav-icon">🖱️</span>Actions Class</button>
+    <button class="nav-item" data-page="handling"><span class="nav-icon">🪟</span>Alerts/Frames/Windows</button>
+  </div>
+  <div class="nav-group">
+    <div class="nav-group-title">Framework</div>
+    <button class="nav-item" data-page="framework"><span class="nav-icon">🏗️</span>Hybrid Framework Design</button>
+    <button class="nav-item" data-page="testng-adv"><span class="nav-icon">🧪</span>TestNG Advanced</button>
+    <button class="nav-item" data-page="datadriven"><span class="nav-icon">📊</span>Data-Driven Testing</button>
+    <button class="nav-item" data-page="bdd"><span class="nav-icon">🥒</span>BDD Cucumber</button>
+  </div>
+  <div class="nav-group">
+    <div class="nav-group-title">DevOps &amp; Reporting</div>
+    <button class="nav-item" data-page="cicd"><span class="nav-icon">🚀</span>CI/CD — Jenkins</button>
+    <button class="nav-item" data-page="grid"><span class="nav-icon">🌐</span>Selenium Grid &amp; Docker</button>
+    <button class="nav-item" data-page="reporting"><span class="nav-icon">📈</span>ExtentReports &amp; Allure</button>
+    <button class="nav-item" data-page="logging"><span class="nav-icon">📝</span>Log4j2 Logging</button>
+  </div>
+  <div class="nav-group">
+    <div class="nav-group-title">Interview Prep</div>
+    <button class="nav-item" data-page="interview"><span class="nav-icon">💼</span>Interview Q&amp;A<span class="nav-badge">100+</span></button>
+    <button class="nav-item" data-page="cheatsheet"><span class="nav-icon">📋</span>Cheat Sheet</button>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main id="main">
+
+<!-- ==================== HOME ==================== -->
+<section class="page active" id="page-home">
+  <div class="hero">
+    <h1>Selenium + Java</h1>
+    <p class="hero-sub">Complete preparation guide for a <strong>3–4 years experienced</strong> QA Automation Engineer switching companies. Covers Java Core, Selenium WebDriver, Framework Design, TestNG, CI/CD, and 100+ interview Q&amp;A.</p>
+    <div class="hero-tags">
+      <span class="tag">Java OOP</span><span class="tag">Java 8</span><span class="tag green">Selenium 4</span>
+      <span class="tag orange">TestNG</span><span class="tag purple">POM + Hybrid</span>
+      <span class="tag cyan">Cucumber BDD</span><span class="tag pink">Jenkins CI/CD</span>
+      <span class="tag red">100+ Interview Q&amp;A</span>
+    </div>
+  </div>
+
+  <h2>🗺️ What Companies Expect at 3-4 Years</h2>
+  <div class="box blue"><div class="box-title">💡 Key Expectations</div>
+  <p>At this level interviewers expect: <strong>Strong Java OOP + Java 8</strong>, ability to <strong>design a framework from scratch</strong>, knowledge of CI/CD integration, parallel execution, TestNG Listeners, data-driven with multiple sources, BDD basics, and ability to debug flaky tests.</p></div>
+
+  <div class="cards">
+    <button class="card" onclick="showPage('java-oop')" style="cursor:pointer;text-align:left;width:100%;background:none;border:none;padding:0"><div class="card-icon">☕</div><div class="card-title">Java OOP</div><div class="card-desc">Classes, Inheritance, Polymorphism, Abstraction, Encapsulation</div></button>
+    <button class="card" onclick="showPage('java8')" style="cursor:pointer;text-align:left;width:100%;background:none;border:none;padding:0"><div class="card-icon">⚡</div><div class="card-title">Java 8</div><div class="card-desc">Lambda, Streams, Optional, Functional Interfaces</div></button>
+    <button class="card" onclick="showPage('java-collections')" style="cursor:pointer;text-align:left;width:100%;background:none;border:none;padding:0"><div class="card-icon">📦</div><div class="card-title">Collections</div><div class="card-desc">List, Map, Set, HashMap, Iterator, Comparable</div></button>
+    <button class="card" onclick="showPage('framework')" style="cursor:pointer;text-align:left;width:100%;background:none;border:none;padding:0"><div class="card-icon">🏗️</div><div class="card-title">Framework Design</div><div class="card-desc">Hybrid POM + PageFactory + DriverFactory + Base classes</div></button>
+    <button class="card" onclick="showPage('testng-adv')" style="cursor:pointer;text-align:left;width:100%;background:none;border:none;padding:0"><div class="card-icon">🧪</div><div class="card-title">TestNG Advanced</div><div class="card-desc">Listeners, IRetryAnalyzer, parallel, ThreadLocal, reporting</div></button>
+    <button class="card" onclick="showPage('bdd')" style="cursor:pointer;text-align:left;width:100%;background:none;border:none;padding:0"><div class="card-icon">🥒</div><div class="card-title">Cucumber BDD</div><div class="card-desc">Feature files, Step Defs, Hooks, Tags, Data Tables</div></button>
+    <button class="card" onclick="showPage('cicd')" style="cursor:pointer;text-align:left;width:100%;background:none;border:none;padding:0"><div class="card-icon">🚀</div><div class="card-title">CI/CD</div><div class="card-desc">Jenkins pipeline, GitHub Actions, Maven lifecycle</div></button>
+    <button class="card" onclick="showPage('interview')" style="cursor:pointer;text-align:left;width:100%;background:none;border:none;padding:0"><div class="card-icon">💼</div><div class="card-title">Interview Q&amp;A</div><div class="card-desc">100+ questions for 3-4 years experience level</div></button>
+  </div>
+
+  <h2>📈 Skill Coverage</h2>
+  <div class="prog-wrap"><div class="prog-label"><span>Java Core + OOP + Java 8</span><span>Must Know</span></div><div class="prog-bar"><div class="prog-fill" data-w="100%" style="width:0"></div></div></div>
+  <div class="prog-wrap"><div class="prog-label"><span>Selenium WebDriver + Locators</span><span>Must Know</span></div><div class="prog-bar"><div class="prog-fill" data-w="100%" style="width:0"></div></div></div>
+  <div class="prog-wrap"><div class="prog-label"><span>Framework Design (POM/Hybrid)</span><span>Must Know</span></div><div class="prog-bar"><div class="prog-fill" data-w="100%" style="width:0"></div></div></div>
+  <div class="prog-wrap"><div class="prog-label"><span>TestNG Advanced + Parallel</span><span>Expected</span></div><div class="prog-bar"><div class="prog-fill" data-w="90%" style="width:0"></div></div></div>
+  <div class="prog-wrap"><div class="prog-label"><span>CI/CD + Jenkins + Grid</span><span>Expected</span></div><div class="prog-bar"><div class="prog-fill" data-w="80%" style="width:0"></div></div></div>
+  <div class="prog-wrap"><div class="prog-label"><span>Cucumber BDD</span><span>Good to Have</span></div><div class="prog-bar"><div class="prog-fill" data-w="70%" style="width:0"></div></div></div>
+</section>
+
+<!-- ==================== JAVA OOP ==================== -->
+<section class="page" id="page-java-oop">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Java OOP</span></div>
+  <h1>Java OOP Concepts</h1>
+  <p>Interviewers at 3-4 year level always ask OOP. You must explain concepts <strong>with examples from your automation framework</strong>.</p>
+
+  <h2>🔑 4 Pillars of OOP</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Pillar</th><th>Definition</th><th>Framework Example</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pill p-blue">Encapsulation</span></td><td>Hiding data using private fields + getters/setters</td><td>WebElements in Page classes are <code>private</code></td></tr>
+      <tr><td><span class="pill p-green">Inheritance</span></td><td>Child class acquires parent properties</td><td><code>LoginPage extends BasePage</code></td></tr>
+      <tr><td><span class="pill p-orange">Polymorphism</span></td><td>One interface, multiple implementations</td><td><code>WebDriver driver = new ChromeDriver()</code></td></tr>
+      <tr><td><span class="pill p-purple">Abstraction</span></td><td>Hide implementation, show only essential</td><td><code>BasePage</code> hides wait logic, exposes <code>click()</code></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>☕ Classes &amp; Objects</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><div class="cb-meta"><span class="cb-file">BasePage.java</span><button class="copy-btn">Copy</button></div></div>
+  <pre><code><span class="kw">public class</span> <span class="cl">BasePage</span> {                  <span class="cmt">// Class</span>
+    <span class="kw">private</span> WebDriver driver;             <span class="cmt">// Encapsulation — private field</span>
+    <span class="kw">protected</span> WebDriverWait wait;
+
+    <span class="kw">public</span> <span class="cl">BasePage</span>(WebDriver driver) {   <span class="cmt">// Constructor</span>
+        <span class="kw">this</span>.driver = driver;
+        <span class="kw">this</span>.wait   = <span class="kw">new</span> <span class="cl">WebDriverWait</span>(driver, Duration.<span class="mt">ofSeconds</span>(<span class="num">15</span>));
+        PageFactory.<span class="mt">initElements</span>(driver, <span class="kw">this</span>);
+    }
+
+    <span class="kw">public</span> WebDriver <span class="mt">getDriver</span>() { <span class="kw">return</span> driver; }   <span class="cmt">// getter</span>
+
+    <span class="kw">protected void</span> <span class="mt">click</span>(WebElement el) {
+        wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">elementToBeClickable</span>(el)).<span class="mt">click</span>();
+    }
+    <span class="kw">protected void</span> <span class="mt">type</span>(WebElement el, String text) {
+        el.<span class="mt">clear</span>(); el.<span class="mt">sendKeys</span>(text);
+    }
+    <span class="kw">protected</span> String <span class="mt">getText</span>(WebElement el) {
+        <span class="kw">return</span> wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">visibilityOf</span>(el)).<span class="mt">getText</span>();
+    }
+}
+
+<span class="kw">public class</span> <span class="cl">LoginPage</span> <span class="kw">extends</span> <span class="cl">BasePage</span> {  <span class="cmt">// Inheritance</span>
+    <span class="an">@FindBy</span>(id=<span class="str">"username"</span>) <span class="kw">private</span> WebElement usernameField;
+    <span class="an">@FindBy</span>(id=<span class="str">"password"</span>) <span class="kw">private</span> WebElement passwordField;
+    <span class="an">@FindBy</span>(id=<span class="str">"submit"</span>)   <span class="kw">private</span> WebElement submitBtn;
+
+    <span class="kw">public</span> <span class="cl">LoginPage</span>(WebDriver driver) { <span class="kw">super</span>(driver); }
+
+    <span class="kw">public</span> <span class="cl">DashboardPage</span> <span class="mt">login</span>(String u, String p) {
+        <span class="mt">type</span>(usernameField, u);
+        <span class="mt">type</span>(passwordField, p);
+        <span class="mt">click</span>(submitBtn);
+        <span class="kw">return new</span> <span class="cl">DashboardPage</span>(<span class="mt">getDriver</span>());
+    }
+}</code></pre></div>
+
+  <h2>🔁 Polymorphism in Automation</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="cmt">// Runtime Polymorphism (Method Overriding)</span>
+<span class="kw">public class</span> <span class="cl">DriverFactory</span> {
+    <span class="kw">public static</span> WebDriver <span class="mt">getDriver</span>(String browser) {
+        WebDriver driver;
+        <span class="kw">switch</span>(browser.<span class="mt">toLowerCase</span>()) {
+            <span class="kw">case</span> <span class="str">"chrome"</span>:
+                WebDriverManager.<span class="mt">chromedriver</span>().<span class="mt">setup</span>();
+                driver = <span class="kw">new</span> <span class="cl">ChromeDriver</span>();   <span class="cmt">// WebDriver = ChromeDriver (polymorphism)</span>
+                <span class="kw">break</span>;
+            <span class="kw">case</span> <span class="str">"firefox"</span>:
+                WebDriverManager.<span class="mt">firefoxdriver</span>().<span class="mt">setup</span>();
+                driver = <span class="kw">new</span> <span class="cl">FirefoxDriver</span>();
+                <span class="kw">break</span>;
+            <span class="kw">default</span>:
+                WebDriverManager.<span class="mt">edgedriver</span>().<span class="mt">setup</span>();
+                driver = <span class="kw">new</span> <span class="cl">EdgeDriver</span>();
+        }
+        driver.<span class="mt">manage</span>().<span class="mt">window</span>().<span class="mt">maximize</span>();
+        <span class="kw">return</span> driver;
+    }
+}
+
+<span class="cmt">// Compile-time Polymorphism (Method Overloading)</span>
+<span class="kw">public void</span> <span class="mt">waitForElement</span>(By locator) { <span class="cmt">/* default 10s */</span> }
+<span class="kw">public void</span> <span class="mt">waitForElement</span>(By locator, <span class="kw">int</span> seconds) { <span class="cmt">/* custom */</span> }
+<span class="kw">public void</span> <span class="mt">waitForElement</span>(WebElement el) { <span class="cmt">/* by element */</span> }</code></pre></div>
+
+  <h2>🔗 IS-A vs HAS-A Relationship</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Relationship</th><th>Type</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td><strong>IS-A</strong></td><td>Inheritance (<code>extends</code>)</td><td><code>LoginPage IS-A BasePage</code></td></tr>
+      <tr><td><strong>HAS-A</strong></td><td>Composition / Aggregation</td><td><code>LoginPage HAS-A WebDriver</code> (passed via constructor)</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>🔐 Access Modifiers</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Modifier</th><th>Same Class</th><th>Same Package</th><th>Subclass</th><th>Other Package</th></tr></thead>
+    <tbody>
+      <tr><td><code>private</code></td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr>
+      <tr><td><code>default</code></td><td>✅</td><td>✅</td><td>❌</td><td>❌</td></tr>
+      <tr><td><code>protected</code></td><td>✅</td><td>✅</td><td>✅</td><td>❌</td></tr>
+      <tr><td><code>public</code></td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>⚡ Static vs Instance</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="kw">public class</span> <span class="cl">ConfigReader</span> {
+    <span class="kw">private static</span> Properties props;         <span class="cmt">// static — shared across all instances</span>
+    <span class="kw">private</span> String environment;               <span class="cmt">// instance — per object</span>
+
+    <span class="kw">static</span> {  <span class="cmt">// static initializer block — runs once when class loads</span>
+        props = <span class="kw">new</span> <span class="cl">Properties</span>();
+        <span class="kw">try</span> {
+            props.<span class="mt">load</span>(<span class="kw">new</span> <span class="cl">FileInputStream</span>(<span class="str">"config.properties"</span>));
+        } <span class="kw">catch</span> (IOException e) { e.<span class="mt">printStackTrace</span>(); }
+    }
+
+    <span class="kw">public static</span> String <span class="mt">get</span>(String key) { <span class="kw">return</span> props.<span class="mt">getProperty</span>(key); }
+}
+
+<span class="cmt">// Usage — no object needed</span>
+String url = ConfigReader.<span class="mt">get</span>(<span class="str">"base.url"</span>);</code></pre></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('home')"><span class="dir">← Back</span>Home</button>
+    <button class="nav-btn" onclick="showPage('java-collections')"><span class="dir">Next →</span>Java Collections</button>
+  </div>
+</section>
+
+<!-- ==================== JAVA COLLECTIONS ==================== -->
+<section class="page" id="page-java-collections">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Java Collections</span></div>
+  <h1>Java Collections</h1>
+  <p>Collections are heavily used in automation — storing elements, test data, window handles, etc.</p>
+
+  <h2>🗂️ Collections Hierarchy</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Interface</th><th>Implementation</th><th>Ordered</th><th>Duplicates</th><th>Use in Automation</th></tr></thead>
+    <tbody>
+      <tr><td><code>List</code></td><td>ArrayList, LinkedList</td><td>✅ Yes (index)</td><td>✅ Yes</td><td>Store list of WebElements, test data rows</td></tr>
+      <tr><td><code>Set</code></td><td>HashSet, LinkedHashSet, TreeSet</td><td>❌/✅</td><td>❌ No</td><td>Store window handles (<code>getWindowHandles()</code>)</td></tr>
+      <tr><td><code>Map</code></td><td>HashMap, LinkedHashMap, TreeMap</td><td>❌/✅</td><td>Keys: No</td><td>Store test data key-value, config properties</td></tr>
+      <tr><td><code>Queue</code></td><td>LinkedList, PriorityQueue</td><td>✅ FIFO</td><td>✅ Yes</td><td>Test execution order management</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>📋 ArrayList — Most Used</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="kw">import</span> java.util.*;
+
+<span class="cmt">// Storing multiple WebElements</span>
+List&lt;WebElement&gt; checkboxes = driver.<span class="mt">findElements</span>(By.<span class="mt">cssSelector</span>(<span class="str">"input[type='checkbox']"</span>));
+System.out.<span class="mt">println</span>(<span class="str">"Total: "</span> + checkboxes.<span class="mt">size</span>());
+
+<span class="cmt">// ArrayList basic operations</span>
+List&lt;String&gt; names = <span class="kw">new</span> ArrayList&lt;&gt;(Arrays.<span class="mt">asList</span>(<span class="str">"Alice"</span>, <span class="str">"Bob"</span>, <span class="str">"Charlie"</span>));
+names.<span class="mt">add</span>(<span class="str">"Dave"</span>);
+names.<span class="mt">remove</span>(<span class="str">"Bob"</span>);
+names.<span class="mt">contains</span>(<span class="str">"Alice"</span>);    <span class="cmt">// true</span>
+names.<span class="mt">get</span>(<span class="num">0</span>);               <span class="cmt">// "Alice"</span>
+names.<span class="mt">size</span>();               <span class="cmt">// 3</span>
+Collections.<span class="mt">sort</span>(names);   <span class="cmt">// alphabetical sort</span>
+
+<span class="cmt">// Iterate</span>
+<span class="kw">for</span>(String n : names) System.out.<span class="mt">println</span>(n);
+names.<span class="mt">forEach</span>(System.out::<span class="mt">println</span>);  <span class="cmt">// Java 8 method reference</span>
+
+<span class="cmt">// Real automation use — get all dropdown options text</span>
+Select sel = <span class="kw">new</span> <span class="cl">Select</span>(driver.<span class="mt">findElement</span>(By.<span class="mt">id</span>(<span class="str">"country"</span>)));
+List&lt;String&gt; optTexts = sel.<span class="mt">getOptions</span>().<span class="mt">stream</span>()
+    .<span class="mt">map</span>(WebElement::<span class="mt">getText</span>)
+    .<span class="mt">collect</span>(Collectors.<span class="mt">toList</span>());</code></pre></div>
+
+  <h2>🗃️ HashMap — Key-Value Storage</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="cmt">// Store test data</span>
+Map&lt;String, String&gt; userData = <span class="kw">new</span> HashMap&lt;&gt;();
+userData.<span class="mt">put</span>(<span class="str">"username"</span>, <span class="str">"admin"</span>);
+userData.<span class="mt">put</span>(<span class="str">"password"</span>, <span class="str">"secret"</span>);
+userData.<span class="mt">put</span>(<span class="str">"email"</span>,    <span class="str">"admin@test.com"</span>);
+
+userData.<span class="mt">get</span>(<span class="str">"username"</span>);             <span class="cmt">// "admin"</span>
+userData.<span class="mt">containsKey</span>(<span class="str">"email"</span>);       <span class="cmt">// true</span>
+userData.<span class="mt">getOrDefault</span>(<span class="str">"role"</span>, <span class="str">"user"</span>);<span class="cmt">// "user" (key missing)</span>
+userData.<span class="mt">keySet</span>();                    <span class="cmt">// Set of keys</span>
+userData.<span class="mt">values</span>();                    <span class="cmt">// Collection of values</span>
+
+<span class="cmt">// Iterate map</span>
+<span class="kw">for</span>(Map.Entry&lt;String,String&gt; e : userData.<span class="mt">entrySet</span>()) {
+    System.out.<span class="mt">println</span>(e.<span class="mt">getKey</span>() + <span class="str">" = "</span> + e.<span class="mt">getValue</span>());
+}
+
+<span class="cmt">// LinkedHashMap — maintains insertion order</span>
+Map&lt;String, String&gt; ordered = <span class="kw">new</span> LinkedHashMap&lt;&gt;();</code></pre></div>
+
+  <h2>🔀 Set — No Duplicates (Window Handles)</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="cmt">// driver.getWindowHandles() returns Set&lt;String&gt;</span>
+Set&lt;String&gt; handles = driver.<span class="mt">getWindowHandles</span>();
+System.out.<span class="mt">println</span>(<span class="str">"Open windows: "</span> + handles.<span class="mt">size</span>());
+
+<span class="cmt">// Iterate and switch to new window</span>
+String parentWindow = driver.<span class="mt">getWindowHandle</span>();
+<span class="kw">for</span>(String handle : handles) {
+    <span class="kw">if</span>(!handle.<span class="mt">equals</span>(parentWindow)) {
+        driver.<span class="mt">switchTo</span>().<span class="mt">window</span>(handle);
+    }
+}
+
+<span class="cmt">// HashSet example</span>
+Set&lt;String&gt; unique = <span class="kw">new</span> HashSet&lt;&gt;(Arrays.<span class="mt">asList</span>(<span class="str">"a"</span>,<span class="str">"b"</span>,<span class="str">"a"</span>));
+<span class="cmt">// size = 2, no duplicates</span></code></pre></div>
+
+  <h2>🔄 Iterator</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="cmt">// Remove elements while iterating (avoid ConcurrentModificationException)</span>
+List&lt;String&gt; list = <span class="kw">new</span> ArrayList&lt;&gt;(Arrays.<span class="mt">asList</span>(<span class="str">"a"</span>,<span class="str">"b"</span>,<span class="str">"c"</span>));
+Iterator&lt;String&gt; it = list.<span class="mt">iterator</span>();
+<span class="kw">while</span>(it.<span class="mt">hasNext</span>()) {
+    String s = it.<span class="mt">next</span>();
+    <span class="kw">if</span>(s.<span class="mt">equals</span>(<span class="str">"b"</span>)) it.<span class="mt">remove</span>(); <span class="cmt">// safe removal</span>
+}</code></pre></div>
+
+  <h2>📊 Comparable vs Comparator</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="cmt">// Comparable — natural ordering (in the class itself)</span>
+<span class="kw">public class</span> <span class="cl">TestCase</span> <span class="kw">implements</span> <span class="cl">Comparable</span>&lt;TestCase&gt; {
+    <span class="kw">int</span> priority;
+    <span class="an">@Override</span>
+    <span class="kw">public int</span> <span class="mt">compareTo</span>(TestCase other) {
+        <span class="kw">return</span> <span class="kw">this</span>.priority - other.priority; <span class="cmt">// ascending by priority</span>
+    }
+}
+
+<span class="cmt">// Comparator — external ordering (Lambda in Java 8)</span>
+List&lt;TestCase&gt; tests = <span class="kw">new</span> ArrayList&lt;&gt;();
+tests.<span class="mt">sort</span>((a,b) -&gt; a.priority - b.priority);       <span class="cmt">// ascending</span>
+tests.<span class="mt">sort</span>(Comparator.<span class="mt">comparingInt</span>(t -&gt; t.priority));</code></pre></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('java-oop')"><span class="dir">← Previous</span>Java OOP</button>
+    <button class="nav-btn" onclick="showPage('java8')"><span class="dir">Next →</span>Java 8 Features</button>
+  </div>
+</section>
+
+<!-- ==================== JAVA 8 ==================== -->
+<section class="page" id="page-java8">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Java 8</span></div>
+  <h1>Java 8 Features</h1>
+  <p>Java 8 features are <strong>must-know</strong> for 3+ year candidates. Lambda expressions, Streams, and Optional are asked in almost every interview.</p>
+
+  <div class="box orange"><div class="box-title">⚠️ Interviewer Tip</div><p>Be ready to write Lambda expressions and Stream operations on a whiteboard. Practice: filter a list, map to another type, collect results, find first match.</p></div>
+
+  <h2>⚡ Lambda Expressions</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java 8</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="cmt">// Syntax: (parameters) -> expression or { body }</span>
+
+<span class="cmt">// Before Java 8 (Anonymous class)</span>
+Runnable r = <span class="kw">new</span> Runnable() {
+    <span class="kw">public void</span> <span class="mt">run</span>() { System.out.<span class="mt">println</span>(<span class="str">"Running"</span>); }
+};
+
+<span class="cmt">// With Lambda</span>
+Runnable r = () -&gt; System.out.<span class="mt">println</span>(<span class="str">"Running"</span>);
+
+<span class="cmt">// With parameters</span>
+Comparator&lt;String&gt; comp = (a, b) -&gt; a.<span class="mt">compareTo</span>(b);
+
+<span class="cmt">// In automation — Fluent Wait condition</span>
+WebElement el = fluentWait.<span class="mt">until</span>(
+    driver -&gt; driver.<span class="mt">findElement</span>(By.<span class="mt">id</span>(<span class="str">"result"</span>))
+);
+
+<span class="cmt">// forEach with lambda</span>
+List&lt;WebElement&gt; rows = driver.<span class="mt">findElements</span>(By.<span class="mt">tagName</span>(<span class="str">"tr"</span>));
+rows.<span class="mt">forEach</span>(row -&gt; System.out.<span class="mt">println</span>(row.<span class="mt">getText</span>()));</code></pre></div>
+
+  <h2>🌊 Stream API</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java 8 — Streams</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="cmt">// Stream pipeline: source → intermediate ops → terminal op</span>
+
+List&lt;String&gt; names = Arrays.<span class="mt">asList</span>(<span class="str">"Alice"</span>,<span class="str">"Bob"</span>,<span class="str">"Charlie"</span>,<span class="str">"Anna"</span>);
+
+<span class="cmt">// filter + collect</span>
+List&lt;String&gt; aNames = names.<span class="mt">stream</span>()
+    .<span class="mt">filter</span>(n -&gt; n.<span class="mt">startsWith</span>(<span class="str">"A"</span>))
+    .<span class="mt">collect</span>(Collectors.<span class="mt">toList</span>());    <span class="cmt">// ["Alice", "Anna"]</span>
+
+<span class="cmt">// map — transform each element</span>
+List&lt;String&gt; upper = names.<span class="mt">stream</span>()
+    .<span class="mt">map</span>(String::<span class="mt">toUpperCase</span>)
+    .<span class="mt">collect</span>(Collectors.<span class="mt">toList</span>());
+
+<span class="cmt">// sorted + limit</span>
+names.<span class="mt">stream</span>().<span class="mt">sorted</span>().<span class="mt">limit</span>(<span class="num">2</span>).<span class="mt">forEach</span>(System.out::<span class="mt">println</span>);
+
+<span class="cmt">// count</span>
+<span class="kw">long</span> count = names.<span class="mt">stream</span>().<span class="mt">filter</span>(n -&gt; n.<span class="mt">length</span>() &gt; <span class="num">3</span>).<span class="mt">count</span>();
+
+<span class="cmt">// anyMatch, allMatch, noneMatch</span>
+<span class="kw">boolean</span> hasAlice = names.<span class="mt">stream</span>().<span class="mt">anyMatch</span>(n -&gt; n.<span class="mt">equals</span>(<span class="str">"Alice"</span>));
+
+<span class="cmt">// findFirst</span>
+Optional&lt;String&gt; first = names.<span class="mt">stream</span>()
+    .<span class="mt">filter</span>(n -&gt; n.<span class="mt">startsWith</span>(<span class="str">"A"</span>))
+    .<span class="mt">findFirst</span>();
+
+<span class="cmt">// joining (great for building XPath/assertions)</span>
+String csv = names.<span class="mt">stream</span>().<span class="mt">collect</span>(Collectors.<span class="mt">joining</span>(<span class="str">", "</span>));
+
+<span class="cmt">// Real Automation: Get all visible row texts</span>
+List&lt;String&gt; visibleRows = driver.<span class="mt">findElements</span>(By.<span class="mt">tagName</span>(<span class="str">"tr"</span>))
+    .<span class="mt">stream</span>()
+    .<span class="mt">filter</span>(WebElement::<span class="mt">isDisplayed</span>)
+    .<span class="mt">map</span>(WebElement::<span class="mt">getText</span>)
+    .<span class="mt">collect</span>(Collectors.<span class="mt">toList</span>());</code></pre></div>
+
+  <h2>🎯 Optional — Null Safety</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java 8 — Optional</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="cmt">// Avoids NullPointerException</span>
+Optional&lt;String&gt; opt = Optional.<span class="mt">of</span>(<span class="str">"Hello"</span>);
+Optional&lt;String&gt; empty = Optional.<span class="mt">empty</span>();
+Optional&lt;String&gt; nullable = Optional.<span class="mt">ofNullable</span>(someString); <span class="cmt">// may be null</span>
+
+opt.<span class="mt">isPresent</span>();                 <span class="cmt">// true</span>
+opt.<span class="mt">get</span>();                        <span class="cmt">// "Hello"</span>
+opt.<span class="mt">orElse</span>(<span class="str">"default"</span>);           <span class="cmt">// value or default</span>
+opt.<span class="mt">orElseThrow</span>(() -&gt; <span class="kw">new</span> <span class="cl">RuntimeException</span>(<span class="str">"No value"</span>));
+
+<span class="cmt">// In framework — safe config reading</span>
+<span class="kw">public</span> String <span class="mt">getConfig</span>(String key) {
+    <span class="kw">return</span> Optional.<span class="mt">ofNullable</span>(properties.<span class="mt">getProperty</span>(key))
+        .<span class="mt">orElseThrow</span>(() -&gt; <span class="kw">new</span> <span class="cl">RuntimeException</span>(<span class="str">"Missing config: "</span> + key));
+}</code></pre></div>
+
+  <h2>🔧 Functional Interfaces</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Interface</th><th>Method</th><th>Use Case</th></tr></thead>
+    <tbody>
+      <tr><td><code>Predicate&lt;T&gt;</code></td><td><code>test(T t) → boolean</code></td><td>Filter conditions</td></tr>
+      <tr><td><code>Function&lt;T,R&gt;</code></td><td><code>apply(T t) → R</code></td><td>Transform/map values</td></tr>
+      <tr><td><code>Consumer&lt;T&gt;</code></td><td><code>accept(T t) → void</code></td><td>forEach actions</td></tr>
+      <tr><td><code>Supplier&lt;T&gt;</code></td><td><code>get() → T</code></td><td>Lazy initialization</td></tr>
+      <tr><td><code>BiFunction&lt;T,U,R&gt;</code></td><td><code>apply(T,U) → R</code></td><td>Two-param transform</code></td></tr>
+    </tbody>
+  </table></div>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java 8</span><button class="copy-btn">Copy</button></div>
+  <pre><code>Predicate&lt;String&gt; isLong   = s -&gt; s.<span class="mt">length</span>() &gt; <span class="num">5</span>;
+Function&lt;String,Integer&gt; len = String::<span class="mt">length</span>;
+Consumer&lt;String&gt; print    = System.out::<span class="mt">println</span>;
+Supplier&lt;WebDriver&gt; driverSupplier = ChromeDriver::<span class="kw">new</span>;
+
+<span class="cmt">// Compose predicates</span>
+Predicate&lt;String&gt; startsA = s -&gt; s.<span class="mt">startsWith</span>(<span class="str">"A"</span>);
+Predicate&lt;String&gt; combined = isLong.<span class="mt">and</span>(startsA);</code></pre></div>
+
+  <h2>📅 Method References</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java 8</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="cmt">// 4 types of method references</span>
+System.out::<span class="mt">println</span>                   <span class="cmt">// instance method on object</span>
+String::<span class="mt">toUpperCase</span>                   <span class="cmt">// instance method on type</span>
+Integer::<span class="mt">parseInt</span>                     <span class="cmt">// static method</span>
+ChromeDriver::<span class="kw">new</span>                     <span class="cmt">// constructor reference</span>
+
+<span class="cmt">// All equivalent</span>
+list.<span class="mt">forEach</span>(s -&gt; System.out.<span class="mt">println</span>(s));
+list.<span class="mt">forEach</span>(System.out::<span class="mt">println</span>);   <span class="cmt">// same thing</span></code></pre></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('java-collections')"><span class="dir">← Previous</span>Collections</button>
+    <button class="nav-btn" onclick="showPage('java-exceptions')"><span class="dir">Next →</span>Exception Handling</button>
+  </div>
+</section>
+
+<!-- ==================== EXCEPTION HANDLING ==================== -->
+<section class="page" id="page-java-exceptions">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Exception Handling</span></div>
+  <h1>Java Exception Handling</h1>
+  <p>Proper exception handling is crucial in automation to produce meaningful failure messages and keep test execution going.</p>
+
+  <h2>📊 Exception Hierarchy</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Type</th><th>Examples</th><th>Must Handle?</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pill p-red">Error</span></td><td>OutOfMemoryError, StackOverflowError</td><td>No (JVM level)</td></tr>
+      <tr><td><span class="pill p-orange">Checked Exception</span></td><td>IOException, SQLException</td><td>Yes — try-catch or throws</td></tr>
+      <tr><td><span class="pill p-yellow">Unchecked (RuntimeException)</span></td><td>NullPointerException, ArrayIndexOutOfBoundsException</td><td>Optional but recommended</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>🛡️ Try-Catch-Finally in Automation</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="kw">public boolean</span> <span class="mt">isElementPresent</span>(By locator) {
+    <span class="kw">try</span> {
+        driver.<span class="mt">findElement</span>(locator);
+        <span class="kw">return true</span>;
+    } <span class="kw">catch</span> (NoSuchElementException e) {
+        <span class="kw">return false</span>;
+    }
+}
+
+<span class="cmt">// Multiple catch blocks</span>
+<span class="kw">public void</span> <span class="mt">clickElement</span>(By locator) {
+    <span class="kw">try</span> {
+        driver.<span class="mt">findElement</span>(locator).<span class="mt">click</span>();
+    } <span class="kw">catch</span> (NoSuchElementException e) {
+        System.err.<span class="mt">println</span>(<span class="str">"Element not found: "</span> + locator);
+        <span class="kw">throw new</span> <span class="cl">RuntimeException</span>(<span class="str">"Click failed — element not found"</span>, e);
+    } <span class="kw">catch</span> (ElementNotInteractableException e) {
+        System.err.<span class="mt">println</span>(<span class="str">"Element not interactable, trying JS click"</span>);
+        ((JavascriptExecutor) driver).<span class="mt">executeScript</span>(<span class="str">"arguments[0].click();"</span>,
+            driver.<span class="mt">findElement</span>(locator));
+    } <span class="kw">finally</span> {
+        <span class="cmt">// always runs — use for cleanup</span>
+        Logger.<span class="mt">info</span>(<span class="str">"clickElement executed for: "</span> + locator);
+    }
+}
+
+<span class="cmt">// Try-with-resources (auto-close)</span>
+<span class="kw">try</span> (FileInputStream fis = <span class="kw">new</span> <span class="cl">FileInputStream</span>(<span class="str">"data.xlsx"</span>);
+     Workbook wb = <span class="kw">new</span> <span class="cl">XSSFWorkbook</span>(fis)) {
+    <span class="cmt">// use workbook — auto-closed after this block</span>
+} <span class="kw">catch</span> (IOException e) { e.<span class="mt">printStackTrace</span>(); }</code></pre></div>
+
+  <h2>🏗️ Custom Exceptions in Framework</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java — Custom Exception</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="cmt">// Custom framework exception</span>
+<span class="kw">public class</span> <span class="cl">FrameworkException</span> <span class="kw">extends</span> <span class="cl">RuntimeException</span> {
+    <span class="kw">public</span> <span class="cl">FrameworkException</span>(String message) { <span class="kw">super</span>(message); }
+    <span class="kw">public</span> <span class="cl">FrameworkException</span>(String message, Throwable cause) { <span class="kw">super</span>(message, cause); }
+}
+
+<span class="kw">public class</span> <span class="cl">BrowserNotSupportedException</span> <span class="kw">extends</span> <span class="cl">FrameworkException</span> {
+    <span class="kw">public</span> <span class="cl">BrowserNotSupportedException</span>(String browser) {
+        <span class="kw">super</span>(<span class="str">"Browser not supported: "</span> + browser);
+    }
+}
+
+<span class="cmt">// Usage in DriverFactory</span>
+<span class="kw">public static</span> WebDriver <span class="mt">getDriver</span>(String browser) {
+    <span class="kw">switch</span>(browser) {
+        <span class="kw">case</span> <span class="str">"chrome"</span>:  <span class="kw">return new</span> <span class="cl">ChromeDriver</span>();
+        <span class="kw">case</span> <span class="str">"firefox"</span>: <span class="kw">return new</span> <span class="cl">FirefoxDriver</span>();
+        <span class="kw">default</span>: <span class="kw">throw new</span> <span class="cl">BrowserNotSupportedException</span>(browser);
+    }
+}</code></pre></div>
+
+  <h2>⚡ Common Selenium Exceptions</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Exception</th><th>Cause</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td><code>NoSuchElementException</code></td><td>Element not found in DOM</td><td>Check locator, add wait</td></tr>
+      <tr><td><code>StaleElementReferenceException</code></td><td>DOM updated after element found</td><td>Re-find element, use PageFactory</td></tr>
+      <tr><td><code>ElementNotInteractableException</code></td><td>Element present but not interactable</td><td>Wait for visibility/clickable, use JS</td></tr>
+      <tr><td><code>TimeoutException</code></td><td>Wait condition not met in time</td><td>Increase timeout, check condition</td></tr>
+      <tr><td><code>NoAlertPresentException</code></td><td>Switching to alert that doesn't exist</td><td>Use <code>alertIsPresent()</code> wait</td></tr>
+      <tr><td><code>NoSuchFrameException</code></td><td>Frame not found</td><td>Wait for frame, check name/id</td></tr>
+      <tr><td><code>WebDriverException</code></td><td>Browser crashed or connection lost</td><td>Restart driver, check browser</td></tr>
+      <tr><td><code>InvalidSelectorException</code></td><td>Syntax error in XPath/CSS</td><td>Validate your selector</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('java8')"><span class="dir">← Previous</span>Java 8</button>
+    <button class="nav-btn" onclick="showPage('java-strings')"><span class="dir">Next →</span>Strings</button>
+  </div>
+</section>
+
+<!-- ==================== JAVA STRINGS ==================== -->
+<section class="page" id="page-java-strings">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Strings</span></div>
+  <h1>Strings &amp; StringBuilder</h1>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java — String Methods</span><button class="copy-btn">Copy</button></div>
+  <pre><code>String s = <span class="str">"Selenium WebDriver"</span>;
+
+s.<span class="mt">length</span>();                         <span class="cmt">// 18</span>
+s.<span class="mt">toUpperCase</span>() / <span class="mt">toLowerCase</span>();   <span class="cmt">// case change</span>
+s.<span class="mt">trim</span>();                            <span class="cmt">// remove leading/trailing spaces</span>
+s.<span class="mt">strip</span>();                           <span class="cmt">// Java 11 — unicode-aware trim</span>
+s.<span class="mt">contains</span>(<span class="str">"WebDriver"</span>);           <span class="cmt">// true</span>
+s.<span class="mt">startsWith</span>(<span class="str">"Selenium"</span>);          <span class="cmt">// true</span>
+s.<span class="mt">endsWith</span>(<span class="str">"Driver"</span>);             <span class="cmt">// true</span>
+s.<span class="mt">indexOf</span>(<span class="str">"Web"</span>);                  <span class="cmt">// 9</span>
+s.<span class="mt">substring</span>(<span class="num">9</span>);                     <span class="cmt">// "WebDriver"</span>
+s.<span class="mt">substring</span>(<span class="num">9</span>, <span class="num">12</span>);                <span class="cmt">// "Web"</span>
+s.<span class="mt">replace</span>(<span class="str">"Selenium"</span>, <span class="str">"Java"</span>);     <span class="cmt">// "Java WebDriver"</span>
+s.<span class="mt">split</span>(<span class="str">" "</span>);                        <span class="cmt">// ["Selenium", "WebDriver"]</span>
+s.<span class="mt">equals</span>(<span class="str">"selenium webdriver"</span>);     <span class="cmt">// false (case-sensitive)</span>
+s.<span class="mt">equalsIgnoreCase</span>(<span class="str">"SELENIUM WEBDRIVER"</span>); <span class="cmt">// true</span>
+s.<span class="mt">matches</span>(<span class="str">"[A-Za-z ]+"</span>);           <span class="cmt">// true (regex)</span>
+s.<span class="mt">isEmpty</span>();                         <span class="cmt">// false</span>
+s.<span class="mt">isBlank</span>();                          <span class="cmt">// false (Java 11)</span>
+String.<span class="mt">valueOf</span>(<span class="num">123</span>);                 <span class="cmt">// int to String</span>
+String.<span class="mt">format</span>(<span class="str">"Hello %s!"</span>, <span class="str">"World"</span>); <span class="cmt">// formatted string</span>
+String.<span class="mt">join</span>(<span class="str">","</span>, <span class="str">"a"</span>, <span class="str">"b"</span>, <span class="str">"c"</span>);    <span class="cmt">// "a,b,c"</span>
+
+<span class="cmt">// StringBuilder — mutable, use in loops</span>
+StringBuilder sb = <span class="kw">new</span> <span class="cl">StringBuilder</span>();
+sb.<span class="mt">append</span>(<span class="str">"//div"</span>).<span class="mt">append</span>(<span class="str">"[@class='"</span>).<span class="mt">append</span>(<span class="str">"error"</span>).<span class="mt">append</span>(<span class="str">"']"</span>);
+String xpath = sb.<span class="mt">toString</span>(); <span class="cmt">// "//div[@class='error']"</span>
+
+<span class="cmt">// String vs StringBuilder vs StringBuffer</span>
+<span class="cmt">// String — immutable, thread-safe (but creates new object each concat)</span>
+<span class="cmt">// StringBuilder — mutable, NOT thread-safe, fast (use in automation)</span>
+<span class="cmt">// StringBuffer — mutable, thread-safe, slower</span></code></pre></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('java-exceptions')"><span class="dir">← Previous</span>Exceptions</button>
+    <button class="nav-btn" onclick="showPage('java-interfaces')"><span class="dir">Next →</span>Interfaces &amp; Abstract</button>
+  </div>
+</section>
+
+<!-- ==================== INTERFACES ==================== -->
+<section class="page" id="page-java-interfaces">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Interfaces &amp; Abstract</span></div>
+  <h1>Interfaces &amp; Abstract Classes</h1>
+
+  <h2>🔌 Interface vs Abstract Class</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Feature</th><th>Interface</th><th>Abstract Class</th></tr></thead>
+    <tbody>
+      <tr><td>Methods</td><td>abstract + default + static (Java 8)</td><td>abstract + concrete</td></tr>
+      <tr><td>Variables</td><td>public static final only</td><td>Any access modifier</td></tr>
+      <tr><td>Constructor</td><td>❌ No</td><td>✅ Yes</td></tr>
+      <tr><td>Multiple inheritance</td><td>✅ Yes (implements many)</td><td>❌ No (extends one)</td></tr>
+      <tr><td>Use when</td><td>Define a contract (capability)</td><td>Share common behavior</td></tr>
+      <tr><td>Framework example</td><td>WebDriver, TakesScreenshot</td><td>BasePage, BaseTest</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="cmt">// Interface — contract for browser actions</span>
+<span class="kw">public interface</span> <span class="cl">BrowserActions</span> {
+    <span class="kw">void</span> <span class="mt">openBrowser</span>(String url);
+    <span class="kw">void</span> <span class="mt">closeBrowser</span>();
+    <span class="kw">default void</span> <span class="mt">takeScreenshot</span>(String name) {  <span class="cmt">// default method (Java 8)</span>
+        <span class="cmt">// implementation here</span>
+    }
+    <span class="kw">static</span> String <span class="mt">getVersion</span>() { <span class="kw">return</span> <span class="str">"4.0"</span>; }  <span class="cmt">// static method (Java 8)</span>
+}
+
+<span class="cmt">// Abstract class — common base for all page objects</span>
+<span class="kw">public abstract class</span> <span class="cl">BasePage</span> <span class="kw">implements</span> <span class="cl">BrowserActions</span> {
+    <span class="kw">protected</span> WebDriver driver;
+    <span class="kw">protected</span> WebDriverWait wait;
+
+    <span class="kw">public</span> <span class="cl">BasePage</span>(WebDriver driver) {
+        <span class="kw">this</span>.driver = driver;
+        <span class="kw">this</span>.wait = <span class="kw">new</span> <span class="cl">WebDriverWait</span>(driver, Duration.<span class="mt">ofSeconds</span>(<span class="num">15</span>));
+    }
+
+    <span class="kw">public abstract void</span> <span class="mt">verifyPageLoaded</span>();  <span class="cmt">// each page must implement</span>
+
+    <span class="kw">protected void</span> <span class="mt">waitAndClick</span>(WebElement el) {   <span class="cmt">// shared concrete method</span>
+        wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">elementToBeClickable</span>(el)).<span class="mt">click</span>();
+    }
+}
+
+<span class="cmt">// Concrete page</span>
+<span class="kw">public class</span> <span class="cl">LoginPage</span> <span class="kw">extends</span> <span class="cl">BasePage</span> {
+    <span class="kw">public</span> <span class="cl">LoginPage</span>(WebDriver d) { <span class="kw">super</span>(d); }
+
+    <span class="an">@Override</span>
+    <span class="kw">public void</span> <span class="mt">verifyPageLoaded</span>() {
+        wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">titleContains</span>(<span class="str">"Login"</span>));
+    }
+    <span class="an">@Override</span> <span class="kw">public void</span> <span class="mt">openBrowser</span>(String url) { driver.<span class="mt">get</span>(url); }
+    <span class="an">@Override</span> <span class="kw">public void</span> <span class="mt">closeBrowser</span>() { driver.<span class="mt">quit</span>(); }
+}</code></pre></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('java-strings')"><span class="dir">← Previous</span>Strings</button>
+    <button class="nav-btn" onclick="showPage('intro')"><span class="dir">Next →</span>Selenium Intro</button>
+  </div>
+</section>
+
+<!-- ==================== SELENIUM INTRO ==================== -->
+<section class="page" id="page-intro">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Selenium Intro</span></div>
+  <h1>Selenium Introduction &amp; Architecture</h1>
+
+  <h2>🏗️ Selenium 4 Architecture</h2>
+  <div class="box blue"><div class="box-title">Flow</div>
+  <p><strong>Test Code (Java)</strong> → Selenium Client Library → <strong>W3C WebDriver Protocol (HTTP/JSON)</strong> → Browser Driver (ChromeDriver) → <strong>Browser</strong></p></div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Selenium 3</th><th>Selenium 4</th></tr></thead>
+    <tbody>
+      <tr><td>JSON Wire Protocol (custom)</td><td><strong>W3C WebDriver Standard</strong></td></tr>
+      <tr><td>Requires extra translation layer</td><td>Direct W3C compliant communication</td></tr>
+      <tr><td>Grid had Hub-Node only</td><td>Grid 4 — Router, Distributor, Sessions, Node</td></tr>
+      <tr><td>No CDP support</td><td>Chrome DevTools Protocol (CDP) built-in</td></tr>
+      <tr><td>No relative locators</td><td>Relative locators: above(), below(), near()</td></tr>
+      <tr><td>No new window API</td><td><code>driver.switchTo().newWindow(WindowType.TAB)</code></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>🆚 Selenium vs Cypress vs Playwright</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Feature</th><th>Selenium</th><th>Cypress</th><th>Playwright</th></tr></thead>
+    <tbody>
+      <tr><td>Language</td><td>Java, Python, C#, JS, Ruby</td><td>JS/TS only</td><td>Java, JS, Python, C#</td></tr>
+      <tr><td>Browser support</td><td>All (IE too)</td><td>Chrome, FF, Edge</td><td>Chrome, FF, WebKit</td></tr>
+      <tr><td>Mobile (via Appium)</td><td>✅</td><td>❌</td><td>Limited</td></tr>
+      <tr><td>Parallel</td><td>Grid/TestNG</td><td>Built-in</td><td>Built-in</td></tr>
+      <tr><td>Maturity</td><td>Most mature, large community</td><td>Growing</td><td>Growing fast</td></tr>
+      <tr><td>Enterprise adoption</td><td>Very high</td><td>Medium</td><td>Growing</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('java-interfaces')"><span class="dir">← Previous</span>Interfaces</button>
+    <button class="nav-btn" onclick="showPage('setup')"><span class="dir">Next →</span>Setup &amp; Maven</button>
+  </div>
+</section>
+
+<!-- ==================== SETUP ==================== -->
+<section class="page" id="page-setup">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Setup</span></div>
+  <h1>Environment Setup &amp; Maven</h1>
+
+  <h2>📦 pom.xml — Complete Dependencies</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">XML</span><div class="cb-meta"><span class="cb-file">pom.xml</span><button class="copy-btn">Copy</button></div></div>
+  <pre><code><span class="br">&lt;dependencies&gt;</span>
+  <span class="cmt">&lt;!-- Selenium 4 --&gt;</span>
+  <span class="br">&lt;dependency&gt;&lt;groupId&gt;</span>org.seleniumhq.selenium<span class="br">&lt;/groupId&gt;</span>
+    <span class="br">&lt;artifactId&gt;</span>selenium-java<span class="br">&lt;/artifactId&gt;&lt;version&gt;</span>4.18.1<span class="br">&lt;/version&gt;&lt;/dependency&gt;</span>
+  <span class="cmt">&lt;!-- WebDriverManager --&gt;</span>
+  <span class="br">&lt;dependency&gt;&lt;groupId&gt;</span>io.github.bonigarcia<span class="br">&lt;/groupId&gt;</span>
+    <span class="br">&lt;artifactId&gt;</span>webdrivermanager<span class="br">&lt;/artifactId&gt;&lt;version&gt;</span>5.7.0<span class="br">&lt;/version&gt;&lt;/dependency&gt;</span>
+  <span class="cmt">&lt;!-- TestNG --&gt;</span>
+  <span class="br">&lt;dependency&gt;&lt;groupId&gt;</span>org.testng<span class="br">&lt;/groupId&gt;</span>
+    <span class="br">&lt;artifactId&gt;</span>testng<span class="br">&lt;/artifactId&gt;&lt;version&gt;</span>7.9.0<span class="br">&lt;/version&gt;&lt;scope&gt;</span>test<span class="br">&lt;/scope&gt;&lt;/dependency&gt;</span>
+  <span class="cmt">&lt;!-- ExtentReports --&gt;</span>
+  <span class="br">&lt;dependency&gt;&lt;groupId&gt;</span>com.aventstack<span class="br">&lt;/groupId&gt;</span>
+    <span class="br">&lt;artifactId&gt;</span>extentreports<span class="br">&lt;/artifactId&gt;&lt;version&gt;</span>5.1.1<span class="br">&lt;/version&gt;&lt;/dependency&gt;</span>
+  <span class="cmt">&lt;!-- Apache POI (Excel) --&gt;</span>
+  <span class="br">&lt;dependency&gt;&lt;groupId&gt;</span>org.apache.poi<span class="br">&lt;/groupId&gt;</span>
+    <span class="br">&lt;artifactId&gt;</span>poi-ooxml<span class="br">&lt;/artifactId&gt;&lt;version&gt;</span>5.2.5<span class="br">&lt;/version&gt;&lt;/dependency&gt;</span>
+  <span class="cmt">&lt;!-- Log4j2 --&gt;</span>
+  <span class="br">&lt;dependency&gt;&lt;groupId&gt;</span>org.apache.logging.log4j<span class="br">&lt;/groupId&gt;</span>
+    <span class="br">&lt;artifactId&gt;</span>log4j-core<span class="br">&lt;/artifactId&gt;&lt;version&gt;</span>2.23.0<span class="br">&lt;/version&gt;&lt;/dependency&gt;</span>
+  <span class="cmt">&lt;!-- Cucumber --&gt;</span>
+  <span class="br">&lt;dependency&gt;&lt;groupId&gt;</span>io.cucumber<span class="br">&lt;/groupId&gt;</span>
+    <span class="br">&lt;artifactId&gt;</span>cucumber-java<span class="br">&lt;/artifactId&gt;&lt;version&gt;</span>7.15.0<span class="br">&lt;/version&gt;&lt;/dependency&gt;</span>
+  <span class="br">&lt;dependency&gt;&lt;groupId&gt;</span>io.cucumber<span class="br">&lt;/groupId&gt;</span>
+    <span class="br">&lt;artifactId&gt;</span>cucumber-testng<span class="br">&lt;/artifactId&gt;&lt;version&gt;</span>7.15.0<span class="br">&lt;/version&gt;&lt;/dependency&gt;</span>
+  <span class="cmt">&lt;!-- Jackson (JSON) --&gt;</span>
+  <span class="br">&lt;dependency&gt;&lt;groupId&gt;</span>com.fasterxml.jackson.core<span class="br">&lt;/groupId&gt;</span>
+    <span class="br">&lt;artifactId&gt;</span>jackson-databind<span class="br">&lt;/artifactId&gt;&lt;version&gt;</span>2.17.0<span class="br">&lt;/version&gt;&lt;/dependency&gt;</span>
+<span class="br">&lt;/dependencies&gt;</span>
+
+<span class="br">&lt;build&gt;&lt;plugins&gt;</span>
+  <span class="cmt">&lt;!-- Surefire — runs TestNG tests --&gt;</span>
+  <span class="br">&lt;plugin&gt;&lt;groupId&gt;</span>org.apache.maven.plugins<span class="br">&lt;/groupId&gt;</span>
+    <span class="br">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="br">&lt;/artifactId&gt;&lt;version&gt;</span>3.2.5<span class="br">&lt;/version&gt;</span>
+    <span class="br">&lt;configuration&gt;</span>
+      <span class="br">&lt;suiteXmlFiles&gt;&lt;suiteXmlFile&gt;</span>testng.xml<span class="br">&lt;/suiteXmlFile&gt;&lt;/suiteXmlFiles&gt;</span>
+      <span class="br">&lt;systemPropertyVariables&gt;</span>
+        <span class="br">&lt;browser&gt;</span>${browser}<span class="br">&lt;/browser&gt;</span>   <span class="cmt">&lt;!-- pass via -Dbrowser=chrome --&gt;</span>
+      <span class="br">&lt;/systemPropertyVariables&gt;</span>
+    <span class="br">&lt;/configuration&gt;&lt;/plugin&gt;</span>
+<span class="br">&lt;/plugins&gt;&lt;/build&gt;</span></code></pre></div>
+
+  <h2>📁 Recommended Project Structure</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Project Structure</span><button class="copy-btn">Copy</button></div>
+  <pre><code>src/
+├── main/java/com/framework/
+│   ├── base/
+│   │   ├── BasePage.java          ← abstract base for pages
+│   │   └── BaseTest.java          ← TestNG setup/teardown
+│   ├── pages/
+│   │   ├── LoginPage.java
+│   │   └── DashboardPage.java
+│   ├── utils/
+│   │   ├── DriverFactory.java     ← browser + WebDriver init
+│   │   ├── ConfigReader.java      ← reads config.properties
+│   │   ├── ExcelUtils.java        ← Apache POI wrapper
+│   │   ├── ScreenshotUtil.java
+│   │   └── WaitUtils.java
+│   └── listeners/
+│       ├── TestListener.java      ← TestNG ITestListener
+│       └── RetryAnalyzer.java     ← IRetryAnalyzer
+├── test/java/com/tests/
+│   ├── LoginTest.java
+│   └── CheckoutTest.java
+├── test/resources/
+│   ├── features/                  ← Cucumber .feature files
+│   ├── testdata/testdata.xlsx
+│   └── config.properties
+├── testng.xml
+└── pom.xml</code></pre></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('intro')"><span class="dir">← Previous</span>Intro</button>
+    <button class="nav-btn" onclick="showPage('locators')"><span class="dir">Next →</span>Locators</button>
+  </div>
+</section>
+
+<!-- ==================== LOCATORS ==================== -->
+<section class="page" id="page-locators">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Locators</span></div>
+  <h1>Locators in Selenium</h1>
+
+  <h2>🎯 8 Locator Strategies — Priority Order</h2>
+  <div class="tw"><table>
+    <thead><tr><th>#</th><th>Locator</th><th>Example</th><th>Speed</th><th>Reliability</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><span class="pill p-green">ID</span></td><td><code>By.id("username")</code></td><td>⚡ Fastest</td><td>⭐⭐⭐⭐⭐</td></tr>
+      <tr><td>2</td><td><span class="pill p-green">Name</span></td><td><code>By.name("email")</code></td><td>⚡ Fast</td><td>⭐⭐⭐⭐</td></tr>
+      <tr><td>3</td><td><span class="pill p-blue">CSS Selector</span></td><td><code>By.cssSelector("input#id")</code></td><td>⚡ Fast</td><td>⭐⭐⭐⭐</td></tr>
+      <tr><td>4</td><td><span class="pill p-blue">Class Name</span></td><td><code>By.className("btn")</code></td><td>🔵 Medium</td><td>⭐⭐⭐</td></tr>
+      <tr><td>5</td><td><span class="pill p-orange">Link Text</span></td><td><code>By.linkText("Sign In")</code></td><td>🔵 Medium</td><td>⭐⭐⭐</td></tr>
+      <tr><td>6</td><td><span class="pill p-orange">Partial Link</span></td><td><code>By.partialLinkText("Sign")</code></td><td>🔵 Medium</td><td>⭐⭐⭐</td></tr>
+      <tr><td>7</td><td><span class="pill p-yellow">Tag Name</span></td><td><code>By.tagName("input")</code></td><td>🔵 Medium</td><td>⭐⭐</td></tr>
+      <tr><td>8</td><td><span class="pill p-red">XPath</span></td><td><code>By.xpath("//input[@id='u']")</code></td><td>🔴 Slower</td><td>⭐⭐⭐⭐⭐</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>🆕 Selenium 4 Relative Locators</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java — Relative Locators</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="kw">import static</span> org.openqa.selenium.support.locators.RelativeLocator.*;
+
+<span class="cmt">// Find label ABOVE the password field</span>
+WebElement label = driver.<span class="mt">findElement</span>(
+    <span class="mt">with</span>(By.<span class="mt">tagName</span>(<span class="str">"label"</span>)).<span class="mt">above</span>(By.<span class="mt">id</span>(<span class="str">"password"</span>))
+);
+<span class="cmt">// Find hint text BELOW username field</span>
+WebElement hint = driver.<span class="mt">findElement</span>(
+    <span class="mt">with</span>(By.<span class="mt">tagName</span>(<span class="str">"p"</span>)).<span class="mt">below</span>(By.<span class="mt">id</span>(<span class="str">"username"</span>))
+);
+<span class="cmt">// Find input to RIGHT of a label</span>
+WebElement input = driver.<span class="mt">findElement</span>(
+    <span class="mt">with</span>(By.<span class="mt">tagName</span>(<span class="str">"input"</span>)).<span class="mt">toRightOf</span>(By.<span class="mt">id</span>(<span class="str">"usernameLabel"</span>))
+);
+<span class="cmt">// NEAR — within 50px</span>
+WebElement nearby = driver.<span class="mt">findElement</span>(
+    <span class="mt">with</span>(By.<span class="mt">tagName</span>(<span class="str">"button"</span>)).<span class="mt">near</span>(By.<span class="mt">id</span>(<span class="str">"searchBox"</span>))
+);</code></pre></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('setup')"><span class="dir">← Previous</span>Setup</button>
+    <button class="nav-btn" onclick="showPage('xpath')"><span class="dir">Next →</span>XPath &amp; CSS</button>
+  </div>
+</section>
+
+<!-- ==================== XPATH ==================== -->
+<section class="page" id="page-xpath">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>XPath &amp; CSS</span></div>
+  <h1>XPath &amp; CSS Selectors — Advanced</h1>
+
+  <h2>🔤 XPath — Complete Reference</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">XPath</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="cmt">// Basic</span>
+//input[@id='username']
+//button[@type='submit']
+//a[text()='Forgot Password']
+
+<span class="cmt">// contains() — partial match</span>
+//input[contains(@class,'error')]
+//div[contains(text(),'Success')]
+//button[contains(@onclick,'submit')]
+
+<span class="cmt">// starts-with()</span>
+//input[starts-with(@id,'user_')]
+//div[starts-with(@class,'container')]
+
+<span class="cmt">// normalize-space() — handles extra spaces</span>
+//button[normalize-space(text())='Sign In']
+
+<span class="cmt">// AND / OR</span>
+//input[@type='text' and @name='email']
+//input[@type='text' or @type='email']
+
+<span class="cmt">// Axes — Navigate DOM</span>
+//label[text()='Email']/following-sibling::input   <span class="cmt">// sibling after</span>
+//input[@id='pwd']/preceding-sibling::label        <span class="cmt">// sibling before</span>
+//span[@class='error']/..                          <span class="cmt">// parent</span>
+//div[@id='form']/child::input                     <span class="cmt">// direct children</span>
+//div[@id='form']/descendant::input                <span class="cmt">// all descendants</span>
+//tr/following::tr[1]                              <span class="cmt">// next row</span>
+
+<span class="cmt">// Indexing (1-based)</span>
+(//input[@type='text'])[1]    <span class="cmt">// first text input</span>
+(//tr)[last()]                <span class="cmt">// last row</span>
+(//tr)[last()-1]              <span class="cmt">// second to last</span>
+//ul/li[3]                    <span class="cmt">// 3rd list item</span>
+
+<span class="cmt">// Dynamic XPath</span>
+<span class="str">"//tr[td[text()='"</span> + productName + <span class="str">"']]/td[3]"</span></code></pre></div>
+
+  <h2>🎨 CSS Selectors — Complete Reference</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">CSS</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="cmt">/* Basic */</span>
+#username                       <span class="cmt">/* by ID */</span>
+.error-msg                      <span class="cmt">/* by class */</span>
+input                           <span class="cmt">/* by tag */</span>
+input#username                  <span class="cmt">/* tag + ID */</span>
+button.primary                  <span class="cmt">/* tag + class */</span>
+
+<span class="cmt">/* Attribute selectors */</span>
+input[type='submit']            <span class="cmt">/* exact value */</span>
+a[href^='https']                <span class="cmt">/* starts with */</span>
+a[href$='.pdf']                 <span class="cmt">/* ends with */</span>
+div[class*='error']             <span class="cmt">/* contains */</span>
+input[required]                 <span class="cmt">/* attribute exists */</span>
+
+<span class="cmt">/* Combinators */</span>
+#loginForm > input              <span class="cmt">/* direct child */</span>
+#loginForm input                <span class="cmt">/* any descendant */</span>
+h2 + p                          <span class="cmt">/* adjacent sibling */</span>
+h2 ~ p                          <span class="cmt">/* general sibling */</span>
+
+<span class="cmt">/* Pseudo-classes */</span>
+tr:nth-child(3)                 <span class="cmt">/* 3rd row */</span>
+tr:first-child                  <span class="cmt">/* first row */</span>
+tr:last-child                   <span class="cmt">/* last row */</span>
+input:not([disabled])           <span class="cmt">/* not disabled */</span>
+input:checked                   <span class="cmt">/* checked checkbox */</span></code></pre></div>
+
+  <div class="box blue"><div class="box-title">XPath vs CSS — When to use what</div>
+  <p><strong>CSS</strong>: Prefer for speed and readability. Works great for most element finding.<br>
+  <strong>XPath</strong>: Use when you need <code>text()</code> matching, parent traversal (<code>..</code>), sibling axes (<code>following-sibling</code>), or dynamic index-based selection. CSS cannot traverse UP the DOM — XPath can.</p></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('locators')"><span class="dir">← Previous</span>Locators</button>
+    <button class="nav-btn" onclick="showPage('webdriver')"><span class="dir">Next →</span>WebDriver API</button>
+  </div>
+</section>
+
+<!-- ==================== WEBDRIVER ==================== -->
+<section class="page" id="page-webdriver">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>WebDriver API</span></div>
+  <h1>WebDriver API — All Methods</h1>
+
+  <div class="tabs">
+    <div class="tab-list">
+      <button class="tab-btn" data-tab="nav">Navigation</button>
+      <button class="tab-btn" data-tab="elem">WebElement</button>
+      <button class="tab-btn" data-tab="drop">Dropdowns</button>
+      <button class="tab-btn" data-tab="js">JavaScript</button>
+      <button class="tab-btn" data-tab="ss">Screenshots</button>
+    </div>
+    <div class="tab-panel" data-panel="nav">
+      <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><button class="copy-btn">Copy</button></div>
+      <pre><code>driver.<span class="mt">get</span>(<span class="str">"https://example.com"</span>);
+driver.<span class="mt">navigate</span>().<span class="mt">to</span>(<span class="str">"https://example.com"</span>);
+driver.<span class="mt">navigate</span>().<span class="mt">back</span>();
+driver.<span class="mt">navigate</span>().<span class="mt">forward</span>();
+driver.<span class="mt">navigate</span>().<span class="mt">refresh</span>();
+driver.<span class="mt">getTitle</span>();
+driver.<span class="mt">getCurrentUrl</span>();
+driver.<span class="mt">getPageSource</span>();
+driver.<span class="mt">manage</span>().<span class="mt">window</span>().<span class="mt">maximize</span>();
+driver.<span class="mt">manage</span>().<span class="mt">window</span>().<span class="mt">setSize</span>(<span class="kw">new</span> <span class="cl">Dimension</span>(<span class="num">1920</span>,<span class="num">1080</span>));
+driver.<span class="mt">manage</span>().<span class="mt">timeouts</span>().<span class="mt">implicitlyWait</span>(Duration.<span class="mt">ofSeconds</span>(<span class="num">10</span>));
+driver.<span class="mt">manage</span>().<span class="mt">timeouts</span>().<span class="mt">pageLoadTimeout</span>(Duration.<span class="mt">ofSeconds</span>(<span class="num">30</span>));
+driver.<span class="mt">close</span>();   <span class="cmt">// close current window</span>
+driver.<span class="mt">quit</span>();    <span class="cmt">// close all + end session</span></code></pre></div>
+    </div>
+    <div class="tab-panel" data-panel="elem">
+      <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><button class="copy-btn">Copy</button></div>
+      <pre><code>WebElement el = driver.<span class="mt">findElement</span>(By.<span class="mt">id</span>(<span class="str">"field"</span>));
+el.<span class="mt">click</span>();
+el.<span class="mt">sendKeys</span>(<span class="str">"text"</span>);
+el.<span class="mt">clear</span>();
+el.<span class="mt">submit</span>();
+el.<span class="mt">getText</span>();
+el.<span class="mt">getAttribute</span>(<span class="str">"value"</span>);
+el.<span class="mt">getCssValue</span>(<span class="str">"color"</span>);
+el.<span class="mt">isDisplayed</span>();
+el.<span class="mt">isEnabled</span>();
+el.<span class="mt">isSelected</span>();           <span class="cmt">// for checkbox/radio</span>
+el.<span class="mt">getTagName</span>();
+el.<span class="mt">getLocation</span>();          <span class="cmt">// Point(x,y)</span>
+el.<span class="mt">getSize</span>();               <span class="cmt">// Dimension(w,h)</span>
+el.<span class="mt">getRect</span>();               <span class="cmt">// Rectangle</span>
+
+<span class="cmt">// findElement vs findElements</span>
+driver.<span class="mt">findElement</span>(By);      <span class="cmt">// WebElement — throws if missing</span>
+driver.<span class="mt">findElements</span>(By);     <span class="cmt">// List&lt;WebElement&gt; — empty if missing</span>
+
+<span class="cmt">// Check element presence safely</span>
+<span class="kw">boolean</span> present = !driver.<span class="mt">findElements</span>(By.<span class="mt">id</span>(<span class="str">"btn"</span>)).<span class="mt">isEmpty</span>();</code></pre></div>
+    </div>
+    <div class="tab-panel" data-panel="drop">
+      <div class="cb"><div class="cb-header"><span class="cb-lang">Java — Select Dropdown</span><button class="copy-btn">Copy</button></div>
+      <pre><code>Select sel = <span class="kw">new</span> <span class="cl">Select</span>(driver.<span class="mt">findElement</span>(By.<span class="mt">id</span>(<span class="str">"country"</span>)));
+sel.<span class="mt">selectByVisibleText</span>(<span class="str">"India"</span>);
+sel.<span class="mt">selectByValue</span>(<span class="str">"IN"</span>);
+sel.<span class="mt">selectByIndex</span>(<span class="num">2</span>);
+sel.<span class="mt">getFirstSelectedOption</span>().<span class="mt">getText</span>();
+sel.<span class="mt">getOptions</span>();                <span class="cmt">// all options</span>
+sel.<span class="mt">isMultiple</span>();                 <span class="cmt">// multi-select?</span>
+sel.<span class="mt">deselectAll</span>();               <span class="cmt">// multi-select only</span>
+
+<span class="cmt">// Custom dropdown (non-select tag)</span>
+driver.<span class="mt">findElement</span>(By.<span class="mt">id</span>(<span class="str">"customDd"</span>)).<span class="mt">click</span>(); <span class="cmt">// open</span>
+driver.<span class="mt">findElement</span>(By.<span class="mt">xpath</span>(<span class="str">"//li[text()='India']"</span>)).<span class="mt">click</span>();</code></pre></div>
+    </div>
+    <div class="tab-panel" data-panel="js">
+      <div class="cb"><div class="cb-header"><span class="cb-lang">Java — JavascriptExecutor</span><button class="copy-btn">Copy</button></div>
+      <pre><code>JavascriptExecutor js = (JavascriptExecutor) driver;
+
+js.<span class="mt">executeScript</span>(<span class="str">"window.scrollTo(0, document.body.scrollHeight);"</span>);
+js.<span class="mt">executeScript</span>(<span class="str">"arguments[0].scrollIntoView({behavior:'smooth'});"</span>, el);
+js.<span class="mt">executeScript</span>(<span class="str">"arguments[0].click();"</span>, el);
+js.<span class="mt">executeScript</span>(<span class="str">"arguments[0].value='"</span> + value + <span class="str">"';"</span>, el);
+js.<span class="mt">executeScript</span>(<span class="str">"arguments[0].style.border='3px solid red';"</span>, el); <span class="cmt">// debug</span>
+String title = (String) js.<span class="mt">executeScript</span>(<span class="str">"return document.title;"</span>);
+
+<span class="cmt">// Async JS execution</span>
+js.<span class="mt">executeAsyncScript</span>(<span class="str">"var cb=arguments[arguments.length-1]; setTimeout(cb,2000);"</span>);</code></pre></div>
+    </div>
+    <div class="tab-panel" data-panel="ss">
+      <div class="cb"><div class="cb-header"><span class="cb-lang">Java — Screenshots</span><button class="copy-btn">Copy</button></div>
+      <pre><code><span class="cmt">// Full page screenshot</span>
+File src = ((<span class="cl">TakesScreenshot</span>) driver).<span class="mt">getScreenshotAs</span>(OutputType.FILE);
+FileUtils.<span class="mt">copyFile</span>(src, <span class="kw">new</span> <span class="cl">File</span>(<span class="str">"reports/screenshots/test_"</span>
+    + LocalDateTime.<span class="mt">now</span>().<span class="mt">format</span>(DateTimeFormatter.<span class="mt">ofPattern</span>(<span class="str">"yyyyMMdd_HHmmss"</span>))
+    + <span class="str">".png"</span>));
+
+<span class="cmt">// Element screenshot (Selenium 4)</span>
+File elShot = driver.<span class="mt">findElement</span>(By.<span class="mt">id</span>(<span class="str">"logo"</span>)).<span class="mt">getScreenshotAs</span>(OutputType.FILE);
+
+<span class="cmt">// As Base64 — for embedding in HTML reports</span>
+String b64 = ((<span class="cl">TakesScreenshot</span>) driver).<span class="mt">getScreenshotAs</span>(OutputType.BASE64);</code></pre></div>
+    </div>
+  </div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('xpath')"><span class="dir">← Previous</span>XPath &amp; CSS</button>
+    <button class="nav-btn" onclick="showPage('waits')"><span class="dir">Next →</span>Waits</button>
+  </div>
+</section>
+
+<!-- ==================== WAITS ==================== -->
+<section class="page" id="page-waits">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Waits</span></div>
+  <h1>Selenium Waits</h1>
+  <div class="box red"><div class="box-title">⛔ Never Use</div><p><code>Thread.sleep(3000)</code> — always waits full duration, makes tests slow and unreliable. Always use Explicit Wait.</p></div>
+  <div class="box orange"><div class="box-title">⚠️ Don't Mix</div><p>Never mix Implicit + Explicit waits in the same test — it causes unpredictable behavior (double-timeout bug in some browsers).</p></div>
+
+  <h2>Implicit vs Explicit vs Fluent</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java — All 3 Wait Types</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="cmt">// 1. IMPLICIT WAIT — global, applies to all findElement calls</span>
+driver.<span class="mt">manage</span>().<span class="mt">timeouts</span>().<span class="mt">implicitlyWait</span>(Duration.<span class="mt">ofSeconds</span>(<span class="num">10</span>));
+
+<span class="cmt">// 2. EXPLICIT WAIT — specific element + specific condition</span>
+WebDriverWait wait = <span class="kw">new</span> <span class="cl">WebDriverWait</span>(driver, Duration.<span class="mt">ofSeconds</span>(<span class="num">15</span>));
+
+wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">visibilityOfElementLocated</span>(By.<span class="mt">id</span>(<span class="str">"loader"</span>)));
+wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">elementToBeClickable</span>(By.<span class="mt">id</span>(<span class="str">"submit"</span>))).<span class="mt">click</span>();
+wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">invisibilityOfElementLocated</span>(By.<span class="mt">id</span>(<span class="str">"spinner"</span>)));
+wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">urlContains</span>(<span class="str">"dashboard"</span>));
+wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">titleIs</span>(<span class="str">"Home"</span>));
+wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">alertIsPresent</span>());
+wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">textToBePresentInElementLocated</span>(By.<span class="mt">id</span>(<span class="str">"msg"</span>), <span class="str">"Success"</span>));
+wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">numberOfElementsToBe</span>(By.<span class="mt">tagName</span>(<span class="str">"li"</span>), <span class="num">5</span>));
+wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">frameToBeAvailableAndSwitchToIt</span>(<span class="str">"iframe"</span>));
+wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">attributeContains</span>(el, <span class="str">"class"</span>, <span class="str">"active"</span>));
+wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">stalenessOf</span>(oldEl)); <span class="cmt">// wait for DOM refresh</span>
+
+<span class="cmt">// 3. FLUENT WAIT — custom polling + ignore exceptions</span>
+FluentWait&lt;WebDriver&gt; fluent = <span class="kw">new</span> <span class="cl">FluentWait</span>&lt;&gt;(driver)
+    .<span class="mt">withTimeout</span>(Duration.<span class="mt">ofSeconds</span>(<span class="num">30</span>))
+    .<span class="mt">pollingEvery</span>(Duration.<span class="mt">ofMillis</span>(<span class="num">500</span>))
+    .<span class="mt">ignoring</span>(NoSuchElementException.<span class="kw">class</span>)
+    .<span class="mt">ignoring</span>(StaleElementReferenceException.<span class="kw">class</span>)
+    .<span class="mt">withMessage</span>(<span class="str">"Element not found after 30 seconds"</span>);
+
+WebElement el = fluent.<span class="mt">until</span>(d -> d.<span class="mt">findElement</span>(By.<span class="mt">id</span>(<span class="str">"result"</span>)));</code></pre></div>
+
+  <h2>🔧 Reusable WaitUtils Class</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><div class="cb-meta"><span class="cb-file">WaitUtils.java</span><button class="copy-btn">Copy</button></div></div>
+  <pre><code><span class="kw">public class</span> <span class="cl">WaitUtils</span> {
+    <span class="kw">private final</span> WebDriverWait wait;
+
+    <span class="kw">public</span> <span class="cl">WaitUtils</span>(WebDriver driver) {
+        <span class="kw">this</span>.wait = <span class="kw">new</span> <span class="cl">WebDriverWait</span>(driver, Duration.<span class="mt">ofSeconds</span>(<span class="num">15</span>));
+    }
+
+    <span class="kw">public</span> WebElement <span class="mt">waitForVisible</span>(By locator) {
+        <span class="kw">return</span> wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">visibilityOfElementLocated</span>(locator));
+    }
+    <span class="kw">public</span> WebElement <span class="mt">waitForClickable</span>(By locator) {
+        <span class="kw">return</span> wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">elementToBeClickable</span>(locator));
+    }
+    <span class="kw">public void</span> <span class="mt">waitForInvisible</span>(By locator) {
+        wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">invisibilityOfElementLocated</span>(locator));
+    }
+    <span class="kw">public void</span> <span class="mt">waitForUrl</span>(String urlPart) {
+        wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">urlContains</span>(urlPart));
+    }
+    <span class="kw">public void</span> <span class="mt">waitForLoaderToDisappear</span>() {
+        <span class="mt">waitForInvisible</span>(By.<span class="mt">cssSelector</span>(<span class="str">".loader, .spinner, #loading"</span>));
+    }
+}</code></pre></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('webdriver')"><span class="dir">← Previous</span>WebDriver API</button>
+    <button class="nav-btn" onclick="showPage('actions')"><span class="dir">Next →</span>Actions Class</button>
+  </div>
+</section>
+
+<!-- ==================== ACTIONS ==================== -->
+<section class="page" id="page-actions">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Actions Class</span></div>
+  <h1>Actions Class</h1>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java — Full Actions Reference</span><button class="copy-btn">Copy</button></div>
+  <pre><code>Actions actions = <span class="kw">new</span> <span class="cl">Actions</span>(driver);
+
+<span class="cmt">// Mouse hover</span>
+actions.<span class="mt">moveToElement</span>(menuItem).<span class="mt">perform</span>();
+
+<span class="cmt">// Double click</span>
+actions.<span class="mt">doubleClick</span>(element).<span class="mt">perform</span>();
+
+<span class="cmt">// Right click (context menu)</span>
+actions.<span class="mt">contextClick</span>(element).<span class="mt">perform</span>();
+
+<span class="cmt">// Drag and drop</span>
+actions.<span class="mt">dragAndDrop</span>(source, target).<span class="mt">perform</span>();
+actions.<span class="mt">dragAndDropBy</span>(source, <span class="num">200</span>, <span class="num">0</span>).<span class="mt">perform</span>(); <span class="cmt">// by offset</span>
+
+<span class="cmt">// Click and hold (slider)</span>
+actions.<span class="mt">clickAndHold</span>(slider).<span class="mt">moveByOffset</span>(<span class="num">100</span>, <span class="num">0</span>).<span class="mt">release</span>().<span class="mt">perform</span>();
+
+<span class="cmt">// Move to coordinates</span>
+actions.<span class="mt">moveToLocation</span>(<span class="num">500</span>, <span class="num">300</span>).<span class="mt">click</span>().<span class="mt">perform</span>();
+
+<span class="cmt">// Keyboard — Ctrl+A, Ctrl+C, Ctrl+V</span>
+actions.<span class="mt">keyDown</span>(Keys.CONTROL).<span class="mt">sendKeys</span>(<span class="str">"a"</span>).<span class="mt">keyUp</span>(Keys.CONTROL).<span class="mt">perform</span>();
+actions.<span class="mt">keyDown</span>(Keys.CONTROL).<span class="mt">sendKeys</span>(<span class="str">"c"</span>).<span class="mt">keyUp</span>(Keys.CONTROL).<span class="mt">perform</span>();
+
+<span class="cmt">// Keyboard shortcut — F5 Refresh</span>
+actions.<span class="mt">sendKeys</span>(Keys.F5).<span class="mt">perform</span>();
+
+<span class="cmt">// Shift+click — multi-select</span>
+actions.<span class="mt">keyDown</span>(Keys.SHIFT)
+       .<span class="mt">click</span>(row1).<span class="mt">click</span>(row3)
+       .<span class="mt">keyUp</span>(Keys.SHIFT).<span class="mt">perform</span>();
+
+<span class="cmt">// Chain complex interaction</span>
+actions.<span class="mt">moveToElement</span>(searchBox)
+       .<span class="mt">click</span>()
+       .<span class="mt">sendKeys</span>(<span class="str">"Selenium"</span>)
+       .<span class="mt">sendKeys</span>(Keys.ENTER)
+       .<span class="mt">perform</span>();
+
+<span class="cmt">// Scroll to element (Selenium 4 new API)</span>
+actions.<span class="mt">scrollToElement</span>(element).<span class="mt">perform</span>();
+actions.<span class="mt">scrollByAmount</span>(<span class="num">0</span>, <span class="num">500</span>).<span class="mt">perform</span>(); <span class="cmt">// x,y pixels</span></code></pre></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('waits')"><span class="dir">← Previous</span>Waits</button>
+    <button class="nav-btn" onclick="showPage('handling')"><span class="dir">Next →</span>Alerts, Frames &amp; Windows</button>
+  </div>
+</section>
+
+<!-- ==================== HANDLING ==================== -->
+<section class="page" id="page-handling">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Alerts, Frames &amp; Windows</span></div>
+  <h1>Alerts, Frames, Windows &amp; Cookies</h1>
+
+  <div class="tabs">
+    <div class="tab-list">
+      <button class="tab-btn" data-tab="alerts">Alerts</button>
+      <button class="tab-btn" data-tab="frames">Frames</button>
+      <button class="tab-btn" data-tab="windows">Windows/Tabs</button>
+      <button class="tab-btn" data-tab="cookies">Cookies</button>
+    </div>
+    <div class="tab-panel" data-panel="alerts">
+      <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><button class="copy-btn">Copy</button></div>
+      <pre><code>WebDriverWait wait = <span class="kw">new</span> <span class="cl">WebDriverWait</span>(driver, Duration.<span class="mt">ofSeconds</span>(<span class="num">5</span>));
+Alert alert = wait.<span class="mt">until</span>(ExpectedConditions.<span class="mt">alertIsPresent</span>());
+
+alert.<span class="mt">accept</span>();                  <span class="cmt">// click OK</span>
+alert.<span class="mt">dismiss</span>();                 <span class="cmt">// click Cancel</span>
+alert.<span class="mt">getText</span>();                  <span class="cmt">// get alert message</span>
+alert.<span class="mt">sendKeys</span>(<span class="str">"input text"</span>);  <span class="cmt">// for Prompt alert</span>
+
+<span class="cmt">// 3 types of alerts</span>
+<span class="cmt">// Simple Alert:   alert("message")       — accept only</span>
+<span class="cmt">// Confirm Alert:  confirm("message")     — accept or dismiss</span>
+<span class="cmt">// Prompt Alert:   prompt("message")      — sendKeys + accept</span></code></pre></div>
+    </div>
+    <div class="tab-panel" data-panel="frames">
+      <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><button class="copy-btn">Copy</button></div>
+      <pre><code><span class="cmt">// Switch by index</span>
+driver.<span class="mt">switchTo</span>().<span class="mt">frame</span>(<span class="num">0</span>);
+
+<span class="cmt">// Switch by name or id</span>
+driver.<span class="mt">switchTo</span>().<span class="mt">frame</span>(<span class="str">"mainFrame"</span>);
+
+<span class="cmt">// Switch by WebElement</span>
+WebElement f = driver.<span class="mt">findElement</span>(By.<span class="mt">cssSelector</span>(<span class="str">"iframe#myFrame"</span>));
+driver.<span class="mt">switchTo</span>().<span class="mt">frame</span>(f);
+
+<span class="cmt">// Work inside frame...</span>
+driver.<span class="mt">findElement</span>(By.<span class="mt">id</span>(<span class="str">"submitBtn"</span>)).<span class="mt">click</span>();
+
+<span class="cmt">// Switch back</span>
+driver.<span class="mt">switchTo</span>().<span class="mt">defaultContent</span>();  <span class="cmt">// back to main page</span>
+driver.<span class="mt">switchTo</span>().<span class="mt">parentFrame</span>();      <span class="cmt">// one level up (nested frames)</span>
+
+<span class="cmt">// Always use try-finally to ensure switch back</span>
+<span class="kw">try</span> {
+    driver.<span class="mt">switchTo</span>().<span class="mt">frame</span>(<span class="str">"ad-frame"</span>);
+    <span class="cmt">// work</span>
+} <span class="kw">finally</span> {
+    driver.<span class="mt">switchTo</span>().<span class="mt">defaultContent</span>();
+}</code></pre></div>
+    </div>
+    <div class="tab-panel" data-panel="windows">
+      <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><button class="copy-btn">Copy</button></div>
+      <pre><code><span class="cmt">// Save parent window handle</span>
+String parent = driver.<span class="mt">getWindowHandle</span>();
+
+<span class="cmt">// Open new window (click link, button etc.)</span>
+driver.<span class="mt">findElement</span>(By.<span class="mt">id</span>(<span class="str">"openTab"</span>)).<span class="mt">click</span>();
+
+<span class="cmt">// Switch to new window</span>
+<span class="kw">new</span> <span class="cl">WebDriverWait</span>(driver, Duration.<span class="mt">ofSeconds</span>(<span class="num">5</span>))
+    .<span class="mt">until</span>(d -> d.<span class="mt">getWindowHandles</span>().<span class="mt">size</span>() &gt; <span class="num">1</span>);
+
+Set&lt;String&gt; handles = driver.<span class="mt">getWindowHandles</span>();
+<span class="kw">for</span>(String h : handles) {
+    <span class="kw">if</span>(!h.<span class="mt">equals</span>(parent)) { driver.<span class="mt">switchTo</span>().<span class="mt">window</span>(h); <span class="kw">break</span>; }
+}
+<span class="cmt">// work in new tab...</span>
+driver.<span class="mt">close</span>();                          <span class="cmt">// close new tab</span>
+driver.<span class="mt">switchTo</span>().<span class="mt">window</span>(parent);         <span class="cmt">// back to parent</span>
+
+<span class="cmt">// Selenium 4 — open new tab/window programmatically</span>
+driver.<span class="mt">switchTo</span>().<span class="mt">newWindow</span>(WindowType.TAB);
+driver.<span class="mt">switchTo</span>().<span class="mt">newWindow</span>(WindowType.WINDOW);</code></pre></div>
+    </div>
+    <div class="tab-panel" data-panel="cookies">
+      <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><button class="copy-btn">Copy</button></div>
+      <pre><code><span class="cmt">// Get all cookies</span>
+Set&lt;Cookie&gt; all = driver.<span class="mt">manage</span>().<span class="mt">getCookies</span>();
+Cookie session = driver.<span class="mt">manage</span>().<span class="mt">getCookieNamed</span>(<span class="str">"JSESSIONID"</span>);
+
+<span class="cmt">// Add cookie (for auth bypass in tests)</span>
+Cookie auth = <span class="kw">new</span> <span class="cl">Cookie</span>.<span class="cl">Builder</span>(<span class="str">"auth_token"</span>, <span class="str">"eyJhbGci..."</span>)
+    .<span class="mt">domain</span>(<span class="str">"example.com"</span>).<span class="mt">path</span>(<span class="str">"/"</span>).<span class="mt">build</span>();
+driver.<span class="mt">manage</span>().<span class="mt">addCookie</span>(auth);
+driver.<span class="mt">navigate</span>().<span class="mt">refresh</span>(); <span class="cmt">// apply cookie</span>
+
+<span class="cmt">// Delete</span>
+driver.<span class="mt">manage</span>().<span class="mt">deleteCookieNamed</span>(<span class="str">"auth_token"</span>);
+driver.<span class="mt">manage</span>().<span class="mt">deleteAllCookies</span>();
+
+<span class="cmt">// Common use: Skip login by injecting auth cookie</span>
+driver.<span class="mt">get</span>(<span class="str">"https://app.com"</span>);
+driver.<span class="mt">manage</span>().<span class="mt">addCookie</span>(<span class="kw">new</span> <span class="cl">Cookie</span>(<span class="str">"token"</span>, savedToken));
+driver.<span class="mt">navigate</span>().<span class="mt">refresh</span>();  <span class="cmt">// now logged in</span></code></pre></div>
+    </div>
+  </div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('actions')"><span class="dir">← Previous</span>Actions</button>
+    <button class="nav-btn" onclick="showPage('framework')"><span class="dir">Next →</span>Framework Design</button>
+  </div>
+</section>
+
+<!-- ==================== FRAMEWORK ==================== -->
+<section class="page" id="page-framework">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Hybrid Framework</span></div>
+  <h1>Hybrid Framework Design</h1>
+  <p>A <strong>Hybrid Framework</strong> combines POM + Data-Driven + Keyword-driven approaches. At 3+ years, you must be able to build this from scratch.</p>
+
+  <div class="box green"><div class="box-title">What you must be able to explain in interviews</div>
+  <p>How you designed the framework, what patterns you used, how DriverFactory works, how you handle parallel execution, how you generate reports, and why you made those design decisions.</p></div>
+
+  <h2>🏗️ Core Architecture</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><div class="cb-meta"><span class="cb-file">DriverFactory.java</span><button class="copy-btn">Copy</button></div></div>
+  <pre><code><span class="kw">public class</span> <span class="cl">DriverFactory</span> {
+    <span class="cmt">// ThreadLocal for parallel test execution (one driver per thread)</span>
+    <span class="kw">private static final</span> ThreadLocal&lt;WebDriver&gt; driver = <span class="kw">new</span> ThreadLocal&lt;&gt;();
+
+    <span class="kw">public static</span> WebDriver <span class="mt">initDriver</span>(String browser) {
+        WebDriver d;
+        <span class="kw">switch</span>(browser.<span class="mt">toLowerCase</span>()) {
+            <span class="kw">case</span> <span class="str">"chrome"</span>:
+                WebDriverManager.<span class="mt">chromedriver</span>().<span class="mt">setup</span>();
+                ChromeOptions co = <span class="kw">new</span> <span class="cl">ChromeOptions</span>();
+                co.<span class="mt">addArguments</span>(<span class="str">"--start-maximized"</span>, <span class="str">"--disable-notifications"</span>);
+                d = <span class="kw">new</span> <span class="cl">ChromeDriver</span>(co);
+                <span class="kw">break</span>;
+            <span class="kw">case</span> <span class="str">"firefox"</span>:
+                WebDriverManager.<span class="mt">firefoxdriver</span>().<span class="mt">setup</span>();
+                d = <span class="kw">new</span> <span class="cl">FirefoxDriver</span>();
+                <span class="kw">break</span>;
+            <span class="kw">case</span> <span class="str">"headless"</span>:
+                WebDriverManager.<span class="mt">chromedriver</span>().<span class="mt">setup</span>();
+                ChromeOptions hco = <span class="kw">new</span> <span class="cl">ChromeOptions</span>();
+                hco.<span class="mt">addArguments</span>(<span class="str">"--headless=new"</span>, <span class="str">"--window-size=1920,1080"</span>);
+                d = <span class="kw">new</span> <span class="cl">ChromeDriver</span>(hco);
+                <span class="kw">break</span>;
+            <span class="kw">default</span>: <span class="kw">throw new</span> <span class="cl">IllegalArgumentException</span>(<span class="str">"Unsupported: "</span>+browser);
+        }
+        d.<span class="mt">manage</span>().<span class="mt">timeouts</span>().<span class="mt">implicitlyWait</span>(Duration.<span class="mt">ofSeconds</span>(<span class="num">10</span>));
+        driver.<span class="mt">set</span>(d);
+        <span class="kw">return</span> d;
+    }
+
+    <span class="kw">public static</span> WebDriver <span class="mt">getDriver</span>() { <span class="kw">return</span> driver.<span class="mt">get</span>(); }
+
+    <span class="kw">public static void</span> <span class="mt">quitDriver</span>() {
+        <span class="kw">if</span>(driver.<span class="mt">get</span>() != <span class="kw">null</span>) {
+            driver.<span class="mt">get</span>().<span class="mt">quit</span>();
+            driver.<span class="mt">remove</span>();  <span class="cmt">// prevent memory leak in thread pool</span>
+        }
+    }
+}</code></pre></div>
+
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><div class="cb-meta"><span class="cb-file">BaseTest.java</span><button class="copy-btn">Copy</button></div></div>
+  <pre><code><span class="kw">public class</span> <span class="cl">BaseTest</span> {
+
+    <span class="an">@BeforeMethod</span>(alwaysRun = <span class="kw">true</span>)
+    <span class="an">@Parameters</span>({<span class="str">"browser"</span>})
+    <span class="kw">public void</span> <span class="mt">setUp</span>(<span class="an">@Optional</span>(<span class="str">"chrome"</span>) String browser) {
+        String b = System.<span class="mt">getProperty</span>(<span class="str">"browser"</span>, browser); <span class="cmt">// CLI overrides XML</span>
+        WebDriver driver = DriverFactory.<span class="mt">initDriver</span>(b);
+        driver.<span class="mt">get</span>(ConfigReader.<span class="mt">get</span>(<span class="str">"base.url"</span>));
+    }
+
+    <span class="kw">public</span> WebDriver <span class="mt">getDriver</span>() {
+        <span class="kw">return</span> DriverFactory.<span class="mt">getDriver</span>(); <span class="cmt">// thread-safe</span>
+    }
+
+    <span class="an">@AfterMethod</span>(alwaysRun = <span class="kw">true</span>)
+    <span class="kw">public void</span> <span class="mt">tearDown</span>(ITestResult result) {
+        <span class="kw">if</span>(result.<span class="mt">getStatus</span>() == ITestResult.FAILURE) {
+            ScreenshotUtil.<span class="mt">take</span>(getDriver(), result.<span class="mt">getName</span>());
+        }
+        DriverFactory.<span class="mt">quitDriver</span>();
+    }
+}</code></pre></div>
+
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><div class="cb-meta"><span class="cb-file">ConfigReader.java</span><button class="copy-btn">Copy</button></div></div>
+  <pre><code><span class="kw">public class</span> <span class="cl">ConfigReader</span> {
+    <span class="kw">private static final</span> Properties props = <span class="kw">new</span> Properties();
+
+    <span class="kw">static</span> {
+        String env = System.<span class="mt">getProperty</span>(<span class="str">"env"</span>, <span class="str">"qa"</span>);  <span class="cmt">// -Denv=prod</span>
+        <span class="kw">try</span>(InputStream is = ConfigReader.<span class="kw">class</span>
+            .<span class="mt">getClassLoader</span>()
+            .<span class="mt">getResourceAsStream</span>(<span class="str">"config-"</span> + env + <span class="str">".properties"</span>)) {
+            props.<span class="mt">load</span>(is);
+        } <span class="kw">catch</span>(IOException e) {
+            <span class="kw">throw new</span> <span class="cl">RuntimeException</span>(<span class="str">"Cannot load config"</span>, e);
+        }
+    }
+
+    <span class="kw">public static</span> String <span class="mt">get</span>(String key) {
+        <span class="kw">return</span> Optional.<span class="mt">ofNullable</span>(props.<span class="mt">getProperty</span>(key))
+            .<span class="mt">orElseThrow</span>(() -> <span class="kw">new</span> <span class="cl">RuntimeException</span>(<span class="str">"Missing key: "</span> + key));
+    }
+}</code></pre></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('handling')"><span class="dir">← Previous</span>Alerts/Frames/Windows</button>
+    <button class="nav-btn" onclick="showPage('testng-adv')"><span class="dir">Next →</span>TestNG Advanced</button>
+  </div>
+</section>
+
+<!-- ==================== TESTNG ADVANCED ==================== -->
+<section class="page" id="page-testng-adv">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>TestNG Advanced</span></div>
+  <h1>TestNG Advanced</h1>
+
+  <h2>🎧 ITestListener — Custom Reporting</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><div class="cb-meta"><span class="cb-file">TestListener.java</span><button class="copy-btn">Copy</button></div></div>
+  <pre><code><span class="an">@Listeners</span>(<span class="cl">TestListener</span>.<span class="kw">class</span>)  <span class="cmt">// add to test classes or testng.xml</span>
+<span class="kw">public class</span> <span class="cl">TestListener</span> <span class="kw">implements</span> <span class="cl">ITestListener</span>, <span class="cl">ISuiteListener</span> {
+
+    ExtentReports extent;
+    <span class="kw">static</span> ThreadLocal&lt;ExtentTest&gt; test = <span class="kw">new</span> ThreadLocal&lt;&gt;();
+
+    <span class="an">@Override</span>
+    <span class="kw">public void</span> <span class="mt">onStart</span>(ISuite suite) {
+        extent = ExtentManager.<span class="mt">getInstance</span>();
+    }
+
+    <span class="an">@Override</span>
+    <span class="kw">public void</span> <span class="mt">onTestStart</span>(ITestResult result) {
+        ExtentTest t = extent.<span class="mt">createTest</span>(result.<span class="mt">getMethod</span>().<span class="mt">getMethodName</span>());
+        test.<span class="mt">set</span>(t);
+        t.<span class="mt">info</span>(<span class="str">"Test started: "</span> + result.<span class="mt">getMethod</span>().<span class="mt">getDescription</span>());
+    }
+
+    <span class="an">@Override</span>
+    <span class="kw">public void</span> <span class="mt">onTestSuccess</span>(ITestResult result) {
+        test.<span class="mt">get</span>().<span class="mt">pass</span>(<span class="str">"✅ Test Passed"</span>);
+    }
+
+    <span class="an">@Override</span>
+    <span class="kw">public void</span> <span class="mt">onTestFailure</span>(ITestResult result) {
+        WebDriver driver = DriverFactory.<span class="mt">getDriver</span>();
+        String b64 = ((<span class="cl">TakesScreenshot</span>)driver).<span class="mt">getScreenshotAs</span>(OutputType.BASE64);
+        test.<span class="mt">get</span>().<span class="mt">fail</span>(result.<span class="mt">getThrowable</span>())
+             .<span class="mt">addScreenCaptureFromBase64String</span>(b64, <span class="str">"Failure Screenshot"</span>);
+    }
+
+    <span class="an">@Override</span>
+    <span class="kw">public void</span> <span class="mt">onTestSkipped</span>(ITestResult result) {
+        test.<span class="mt">get</span>().<span class="mt">skip</span>(<span class="str">"⏭️ Test Skipped"</span>);
+    }
+
+    <span class="an">@Override</span>
+    <span class="kw">public void</span> <span class="mt">onFinish</span>(ISuite suite) {
+        extent.<span class="mt">flush</span>();
+    }
+}</code></pre></div>
+
+  <h2>🔁 IRetryAnalyzer — Auto Retry Flaky Tests</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><div class="cb-meta"><span class="cb-file">RetryAnalyzer.java</span><button class="copy-btn">Copy</button></div></div>
+  <pre><code><span class="kw">public class</span> <span class="cl">RetryAnalyzer</span> <span class="kw">implements</span> <span class="cl">IRetryAnalyzer</span> {
+    <span class="kw">private int</span> count = <span class="num">0</span>;
+    <span class="kw">private static final int</span> MAX_RETRY = <span class="num">2</span>;
+
+    <span class="an">@Override</span>
+    <span class="kw">public boolean</span> <span class="mt">retry</span>(ITestResult result) {
+        <span class="kw">if</span>(count &lt; MAX_RETRY) {
+            count++;
+            System.out.<span class="mt">println</span>(<span class="str">"Retrying test: "</span> + result.<span class="mt">getName</span>() + <span class="str">" (attempt "</span>+count+<span class="str">")"</span>);
+            <span class="kw">return true</span>;
+        }
+        <span class="kw">return false</span>;
+    }
+}
+
+<span class="cmt">// Attach to test method</span>
+<span class="an">@Test</span>(retryAnalyzer = RetryAnalyzer.<span class="kw">class</span>)
+<span class="kw">public void</span> <span class="mt">flakyTest</span>() { <span class="cmt">/* ... */</span> }
+
+<span class="cmt">// Or apply globally via Annotation Transformer</span>
+<span class="kw">public class</span> <span class="cl">RetryTransformer</span> <span class="kw">implements</span> <span class="cl">IAnnotationTransformer</span> {
+    <span class="an">@Override</span>
+    <span class="kw">public void</span> <span class="mt">transform</span>(ITestAnnotation ann, Class tc, Constructor ct, Method m) {
+        ann.<span class="mt">setRetryAnalyzer</span>(RetryAnalyzer.<span class="kw">class</span>);  <span class="cmt">// all tests get retry</span>
+    }
+}</code></pre></div>
+
+  <h2>🔀 Parallel Execution with ThreadLocal</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">XML</span><div class="cb-meta"><span class="cb-file">testng.xml</span><button class="copy-btn">Copy</button></div></div>
+  <pre><code><span class="br">&lt;suite</span> name=<span class="str">"Regression"</span> parallel=<span class="str">"methods"</span> thread-count=<span class="str">"4"</span><span class="br">&gt;</span>
+  <span class="br">&lt;listeners&gt;</span>
+    <span class="br">&lt;listener</span> class-name=<span class="str">"com.framework.listeners.TestListener"</span><span class="br">/&gt;</span>
+    <span class="br">&lt;listener</span> class-name=<span class="str">"com.framework.listeners.RetryTransformer"</span><span class="br">/&gt;</span>
+  <span class="br">&lt;/listeners&gt;</span>
+  <span class="br">&lt;test</span> name=<span class="str">"Smoke"</span><span class="br">&gt;</span>
+    <span class="br">&lt;groups&gt;&lt;run&gt;&lt;include</span> name=<span class="str">"smoke"</span><span class="br">/&gt;&lt;/run&gt;&lt;/groups&gt;</span>
+    <span class="br">&lt;parameter</span> name=<span class="str">"browser"</span> value=<span class="str">"chrome"</span><span class="br">/&gt;</span>
+    <span class="br">&lt;classes&gt;</span>
+      <span class="br">&lt;class</span> name=<span class="str">"com.tests.LoginTest"</span><span class="br">/&gt;</span>
+      <span class="br">&lt;class</span> name=<span class="str">"com.tests.CheckoutTest"</span><span class="br">/&gt;</span>
+    <span class="br">&lt;/classes&gt;</span>
+  <span class="br">&lt;/test&gt;</span>
+<span class="br">&lt;/suite&gt;</span></code></pre></div>
+
+  <h2>📊 All TestNG Annotations</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Annotation</th><th>Runs When</th><th>Common Use</th></tr></thead>
+    <tbody>
+      <tr><td><code>@BeforeSuite</code></td><td>Once — before all tests in suite</td><td>Report init, DB connection</td></tr>
+      <tr><td><code>@AfterSuite</code></td><td>Once — after all tests in suite</td><td>Report flush, cleanup</td></tr>
+      <tr><td><code>@BeforeTest</code></td><td>Before each &lt;test&gt; tag in XML</td><td>Environment setup</td></tr>
+      <tr><td><code>@AfterTest</code></td><td>After each &lt;test&gt; tag</td><td>Environment teardown</td></tr>
+      <tr><td><code>@BeforeClass</code></td><td>Once before first method in class</td><td>Browser launch (non-parallel)</td></tr>
+      <tr><td><code>@AfterClass</code></td><td>Once after last method in class</td><td>driver.quit()</td></tr>
+      <tr><td><code>@BeforeMethod</code></td><td>Before each @Test method</td><td>Navigate to URL, login</td></tr>
+      <tr><td><code>@AfterMethod</code></td><td>After each @Test method</td><td>Screenshot on fail, logout</td></tr>
+      <tr><td><code>@Test</code></td><td>Test method</td><td>priority, groups, retryAnalyzer, enabled</td></tr>
+      <tr><td><code>@DataProvider</code></td><td>Provides data to @Test</td><td>Data-driven testing</td></tr>
+      <tr><td><code>@Parameters</code></td><td>Injects XML params</td><td>Cross-browser</td></tr>
+      <tr><td><code>@Listeners</code></td><td>Class/method level</td><td>Attach ITestListener</td></tr>
+      <tr><td><code>@Factory</code></td><td>Creates multiple instances</td><td>Run with different configs</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('framework')"><span class="dir">← Previous</span>Framework Design</button>
+    <button class="nav-btn" onclick="showPage('datadriven')"><span class="dir">Next →</span>Data-Driven</button>
+  </div>
+</section>
+
+<!-- ==================== DATA-DRIVEN ==================== -->
+<section class="page" id="page-datadriven">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Data-Driven</span></div>
+  <h1>Data-Driven Testing</h1>
+
+  <div class="tabs">
+    <div class="tab-list">
+      <button class="tab-btn" data-tab="dp">@DataProvider</button>
+      <button class="tab-btn" data-tab="excel">Excel (POI)</button>
+      <button class="tab-btn" data-tab="json">JSON</button>
+    </div>
+    <div class="tab-panel" data-panel="dp">
+      <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><button class="copy-btn">Copy</button></div>
+      <pre><code><span class="an">@DataProvider</span>(name=<span class="str">"loginData"</span>, parallel=<span class="kw">true</span>)
+<span class="kw">public</span> Object[][] <span class="mt">loginData</span>() {
+    <span class="kw">return new</span> Object[][] {
+        {<span class="str">"admin"</span>,  <span class="str">"pass123"</span>, <span class="kw">true</span>,  <span class="str">"Dashboard"</span>},
+        {<span class="str">"user1"</span>,  <span class="str">"wrong"</span>,   <span class="kw">false</span>, <span class="str">"Invalid credentials"</span>},
+        {<span class="str">"locked"</span>, <span class="str">"pass"</span>,    <span class="kw">false</span>, <span class="str">"Account locked"</span>}
+    };
+}
+
+<span class="an">@Test</span>(dataProvider=<span class="str">"loginData"</span>)
+<span class="kw">public void</span> <span class="mt">loginTest</span>(String user, String pass, <span class="kw">boolean</span> success, String msg) {
+    LoginPage lp = <span class="kw">new</span> <span class="cl">LoginPage</span>(<span class="mt">getDriver</span>());
+    lp.<span class="mt">login</span>(user, pass);
+    <span class="kw">if</span>(success)
+        Assert.<span class="mt">assertTrue</span>(<span class="mt">getDriver</span>().<span class="mt">getTitle</span>().<span class="mt">contains</span>(msg));
+    <span class="kw">else</span>
+        Assert.<span class="mt">assertEquals</span>(lp.<span class="mt">getErrorText</span>(), msg);
+}</code></pre></div>
+    </div>
+    <div class="tab-panel" data-panel="excel">
+      <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><div class="cb-meta"><span class="cb-file">ExcelUtils.java</span><button class="copy-btn">Copy</button></div></div>
+      <pre><code><span class="kw">public class</span> <span class="cl">ExcelUtils</span> {
+
+    <span class="kw">public static</span> Object[][] <span class="mt">readData</span>(String path, String sheet) {
+        <span class="kw">try</span>(FileInputStream fis = <span class="kw">new</span> <span class="cl">FileInputStream</span>(path);
+            Workbook wb = <span class="kw">new</span> <span class="cl">XSSFWorkbook</span>(fis)) {
+
+            Sheet s = wb.<span class="mt">getSheet</span>(sheet);
+            <span class="kw">int</span> rows = s.<span class="mt">getLastRowNum</span>();     <span class="cmt">// excludes header</span>
+            <span class="kw">int</span> cols = s.<span class="mt">getRow</span>(<span class="num">0</span>).<span class="mt">getLastCellNum</span>();
+            Object[][] data = <span class="kw">new</span> Object[rows][cols];
+
+            <span class="kw">for</span>(<span class="kw">int</span> r=<span class="num">1</span>; r&lt;=rows; r++) {
+                <span class="kw">for</span>(<span class="kw">int</span> c=<span class="num">0</span>; c&lt;cols; c++) {
+                    Cell cell = s.<span class="mt">getRow</span>(r).<span class="mt">getCell</span>(c);
+                    data[r-<span class="num">1</span>][c] = <span class="mt">getCellValue</span>(cell);
+                }
+            }
+            <span class="kw">return</span> data;
+        } <span class="kw">catch</span>(IOException e) { <span class="kw">throw new</span> <span class="cl">RuntimeException</span>(e); }
+    }
+
+    <span class="kw">private static</span> Object <span class="mt">getCellValue</span>(Cell cell) {
+        <span class="kw">if</span>(cell == <span class="kw">null</span>) <span class="kw">return</span> <span class="str">""</span>;
+        <span class="kw">switch</span>(cell.<span class="mt">getCellType</span>()) {
+            <span class="kw">case</span> STRING:  <span class="kw">return</span> cell.<span class="mt">getStringCellValue</span>();
+            <span class="kw">case</span> NUMERIC: <span class="kw">return</span> cell.<span class="mt">getNumericCellValue</span>();
+            <span class="kw">case</span> BOOLEAN: <span class="kw">return</span> cell.<span class="mt">getBooleanCellValue</span>();
+            <span class="kw">default</span>: <span class="kw">return</span> <span class="str">""</span>;
+        }
+    }
+}
+
+<span class="cmt">// Usage in DataProvider</span>
+<span class="an">@DataProvider</span>
+<span class="kw">public</span> Object[][] <span class="mt">excelData</span>() {
+    <span class="kw">return</span> ExcelUtils.<span class="mt">readData</span>(<span class="str">"src/test/resources/testdata/LoginData.xlsx"</span>, <span class="str">"Login"</span>);
+}</code></pre></div>
+    </div>
+    <div class="tab-panel" data-panel="json">
+      <div class="cb"><div class="cb-header"><span class="cb-lang">Java — Jackson JSON</span><button class="copy-btn">Copy</button></div>
+      <pre><code><span class="cmt">// testdata.json</span>
+<span class="cmt">// [{"username":"admin","password":"pass","expected":true}]</span>
+
+<span class="kw">import</span> com.fasterxml.jackson.databind.ObjectMapper;
+<span class="kw">import</span> com.fasterxml.jackson.core.type.TypeReference;
+
+<span class="kw">public class</span> <span class="cl">JsonUtils</span> {
+    <span class="kw">public static</span> &lt;T&gt; List&lt;T&gt; <span class="mt">readList</span>(String path, TypeReference&lt;List&lt;T&gt;&gt; type) {
+        <span class="kw">try</span> {
+            <span class="kw">return new</span> <span class="cl">ObjectMapper</span>().<span class="mt">readValue</span>(<span class="kw">new</span> <span class="cl">File</span>(path), type);
+        } <span class="kw">catch</span>(IOException e) { <span class="kw">throw new</span> <span class="cl">RuntimeException</span>(e); }
+    }
+}
+
+<span class="cmt">// POJO</span>
+<span class="kw">public class</span> <span class="cl">LoginData</span> {
+    <span class="kw">public</span> String username, password;
+    <span class="kw">public boolean</span> expected;
+}
+
+<span class="cmt">// DataProvider</span>
+<span class="an">@DataProvider</span>
+<span class="kw">public</span> Object[][] <span class="mt">fromJson</span>() {
+    List&lt;LoginData&gt; list = JsonUtils.<span class="mt">readList</span>(<span class="str">"testdata.json"</span>,
+        <span class="kw">new</span> TypeReference&lt;List&lt;LoginData&gt;&gt;(){});
+    <span class="kw">return</span> list.<span class="mt">stream</span>()
+        .<span class="mt">map</span>(d -&gt; <span class="kw">new</span> Object[]{d.username, d.password, d.expected})
+        .<span class="mt">toArray</span>(Object[][]::new);
+}</code></pre></div>
+    </div>
+  </div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('testng-adv')"><span class="dir">← Previous</span>TestNG Advanced</button>
+    <button class="nav-btn" onclick="showPage('bdd')"><span class="dir">Next →</span>BDD Cucumber</button>
+  </div>
+</section>
+
+<!-- ==================== CI/CD ==================== -->
+<section class="page" id="page-cicd">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>CI/CD</span></div>
+  <h1>CI/CD — Jenkins &amp; GitHub Actions</h1>
+
+  <h2>🚀 Jenkins Pipeline (Declarative)</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Groovy</span><div class="cb-meta"><span class="cb-file">Jenkinsfile</span><button class="copy-btn">Copy</button></div></div>
+  <pre><code>pipeline {
+    agent any
+    parameters {
+        choice(name: <span class="str">'BROWSER'</span>,   choices: [<span class="str">'chrome'</span>,<span class="str">'firefox'</span>], description: <span class="str">'Browser'</span>)
+        choice(name: <span class="str">'ENV'</span>,       choices: [<span class="str">'qa'</span>,<span class="str">'staging'</span>,<span class="str">'prod'</span>], description: <span class="str">'Environment'</span>)
+        string(name: <span class="str">'SUITE'</span>,    defaultValue: <span class="str">'testng.xml'</span>, description: <span class="str">'Test suite'</span>)
+    }
+    environment {
+        JAVA_HOME = <span class="str">'/usr/lib/jvm/java-17'</span>
+    }
+    stages {
+        stage(<span class="str">'Checkout'</span>) {
+            steps { git branch: <span class="str">'main'</span>, url: <span class="str">'https://github.com/org/repo.git'</span> }
+        }
+        stage(<span class="str">'Build'</span>) {
+            steps { sh <span class="str">'mvn clean compile -q'</span> }
+        }
+        stage(<span class="str">'Test'</span>) {
+            steps {
+                sh <span class="str">"""mvn test \
+                   -Dbrowser=${params.BROWSER} \
+                   -Denv=${params.ENV} \
+                   -DsuiteXmlFile=${params.SUITE}"""</span>
+            }
+        }
+        stage(<span class="str">'Publish Report'</span>) {
+            steps {
+                publishHTML(target: [
+                    allowMissing: false,
+                    reportDir:    <span class="str">'target/reports'</span>,
+                    reportFiles:  <span class="str">'index.html'</span>,
+                    reportName:   <span class="str">'Extent Report'</span>
+                ])
+            }
+        }
+    }
+    post {
+        always   { junit <span class="str">'target/surefire-reports/*.xml'</span> }
+        failure  { emailext subject: <span class="str">"FAILED: ${env.JOB_NAME}"</span>, body: <span class="str">"Check console"</span>,
+                            to: <span class="str">'team@company.com'</span> }
+    }
+}</code></pre></div>
+
+  <h2>⚙️ GitHub Actions Workflow</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">YAML</span><div class="cb-meta"><span class="cb-file">.github/workflows/selenium.yml</span><button class="copy-btn">Copy</button></div></div>
+  <pre><code>name: Selenium Tests
+on:
+  push:    { branches: [main] }
+  pull_request: { branches: [main] }
+  schedule: [{ cron: '0 2 * * *' }]   <span class="cmt"># nightly at 2 AM</span>
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        browser: [chrome, firefox]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { java-version: '17', distribution: 'temurin' }
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v1
+      - name: Run Tests
+        run: mvn test -Dbrowser=${{ matrix.browser }} -Dheadless=true
+      - name: Upload Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: extent-report-${{ matrix.browser }}
+          path: target/reports/</code></pre></div>
+
+  <h2>🔧 Maven Commands</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><code>mvn test</code></td><td>Run tests (compile if needed)</td></tr>
+      <tr><td><code>mvn clean test</code></td><td>Clean target/ then run tests</td></tr>
+      <tr><td><code>mvn test -Dbrowser=firefox</code></td><td>Pass system property</td></tr>
+      <tr><td><code>mvn test -Dgroups=smoke</code></td><td>Run only smoke group</td></tr>
+      <tr><td><code>mvn test -DsuiteXmlFile=regression.xml</code></td><td>Use specific suite file</td></tr>
+      <tr><td><code>mvn test -Denv=staging</code></td><td>Run against staging env</td></tr>
+      <tr><td><code>mvn verify</code></td><td>Run tests + integration-test + verify phases</td></tr>
+      <tr><td><code>mvn site</code></td><td>Generate project reports</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('bdd')"><span class="dir">← Previous</span>BDD Cucumber</button>
+    <button class="nav-btn" onclick="showPage('grid')"><span class="dir">Next →</span>Selenium Grid</button>
+  </div>
+</section>
+
+<!-- ==================== GRID ==================== -->
+<section class="page" id="page-grid">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Grid &amp; Docker</span></div>
+  <h1>Selenium Grid &amp; Docker</h1>
+
+  <h2>🌐 Grid 4 Architecture</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Component</th><th>Role</th></tr></thead>
+    <tbody>
+      <tr><td>Router</td><td>Entry point — forwards requests to Distributor or Session Map</td></tr>
+      <tr><td>Distributor</td><td>Tracks available nodes and creates sessions</td></tr>
+      <tr><td>Session Map</td><td>Maps session IDs to Node URLs</td></tr>
+      <tr><td>Node</td><td>Machine with browsers — registers to Hub</td></tr>
+      <tr><td>Event Bus</td><td>Internal communication between components</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>🐳 Docker Compose — Selenium Grid</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">YAML</span><div class="cb-meta"><span class="cb-file">docker-compose.yml</span><button class="copy-btn">Copy</button></div></div>
+  <pre><code>version: "3"
+services:
+  selenium-hub:
+    image: selenium/hub:4.18.1
+    ports: ["4442:4442","4443:4443","4444:4444"]
+
+  chrome:
+    image: selenium/node-chrome:4.18.1
+    shm_size: 2gb
+    depends_on: [selenium-hub]
+    environment:
+      SE_EVENT_BUS_HOST: selenium-hub
+      SE_EVENT_BUS_PUBLISH_PORT: 4442
+      SE_EVENT_BUS_SUBSCRIBE_PORT: 4443
+      SE_NODE_MAX_SESSIONS: 3
+
+  firefox:
+    image: selenium/node-firefox:4.18.1
+    shm_size: 2gb
+    depends_on: [selenium-hub]
+    environment:
+      SE_EVENT_BUS_HOST: selenium-hub
+      SE_EVENT_BUS_PUBLISH_PORT: 4442
+      SE_EVENT_BUS_SUBSCRIBE_PORT: 4443</code></pre></div>
+
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java — RemoteWebDriver</span><button class="copy-btn">Copy</button></div>
+  <pre><code>ChromeOptions options = <span class="kw">new</span> <span class="cl">ChromeOptions</span>();
+<span class="cmt">// Connect to Grid Hub</span>
+WebDriver driver = <span class="kw">new</span> <span class="cl">RemoteWebDriver</span>(
+    <span class="kw">new</span> URL(<span class="str">"http://localhost:4444"</span>), options
+);
+driver.<span class="mt">get</span>(<span class="str">"https://example.com"</span>);
+driver.<span class="mt">quit</span>();</code></pre></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('cicd')"><span class="dir">← Previous</span>CI/CD</button>
+    <button class="nav-btn" onclick="showPage('reporting')"><span class="dir">Next →</span>Reporting</button>
+  </div>
+</section>
+
+<!-- ==================== REPORTING ==================== -->
+<section class="page" id="page-reporting">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Reporting</span></div>
+  <h1>ExtentReports &amp; Allure</h1>
+
+  <h2>📈 ExtentReports 5 Setup</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><div class="cb-meta"><span class="cb-file">ExtentManager.java</span><button class="copy-btn">Copy</button></div></div>
+  <pre><code><span class="kw">public class</span> <span class="cl">ExtentManager</span> {
+    <span class="kw">private static</span> ExtentReports extent;
+
+    <span class="kw">public static</span> ExtentReports <span class="mt">getInstance</span>() {
+        <span class="kw">if</span>(extent == <span class="kw">null</span>) {
+            ExtentSparkReporter spark = <span class="kw">new</span> <span class="cl">ExtentSparkReporter</span>(<span class="str">"target/reports/ExtentReport.html"</span>);
+            spark.<span class="mt">config</span>().<span class="mt">setReportName</span>(<span class="str">"Automation Test Report"</span>);
+            spark.<span class="mt">config</span>().<span class="mt">setDocumentTitle</span>(<span class="str">"Test Results"</span>);
+            spark.<span class="mt">config</span>().<span class="mt">setTheme</span>(Theme.DARK);
+            extent = <span class="kw">new</span> <span class="cl">ExtentReports</span>();
+            extent.<span class="mt">attachReporter</span>(spark);
+            extent.<span class="mt">setSystemInfo</span>(<span class="str">"Environment"</span>, ConfigReader.<span class="mt">get</span>(<span class="str">"env"</span>));
+            extent.<span class="mt">setSystemInfo</span>(<span class="str">"Browser"</span>, System.<span class="mt">getProperty</span>(<span class="str">"browser"</span>));
+            extent.<span class="mt">setSystemInfo</span>(<span class="str">"OS"</span>, System.<span class="mt">getProperty</span>(<span class="str">"os.name"</span>));
+        }
+        <span class="kw">return</span> extent;
+    }
+}</code></pre></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('grid')"><span class="dir">← Previous</span>Selenium Grid</button>
+    <button class="nav-btn" onclick="showPage('logging')"><span class="dir">Next →</span>Log4j2</button>
+  </div>
+</section>
+
+<!-- ==================== LOGGING ==================== -->
+<section class="page" id="page-logging">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Log4j2</span></div>
+  <h1>Log4j2 Logging</h1>
+
+  <div class="cb"><div class="cb-header"><span class="cb-lang">XML</span><div class="cb-meta"><span class="cb-file">log4j2.xml</span><button class="copy-btn">Copy</button></div></div>
+  <pre><code><span class="br">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="br">&lt;Configuration status="WARN"&gt;</span>
+  <span class="br">&lt;Appenders&gt;</span>
+    <span class="br">&lt;Console</span> name=<span class="str">"Console"</span> target=<span class="str">"SYSTEM_OUT"</span><span class="br">&gt;</span>
+      <span class="br">&lt;PatternLayout</span> pattern=<span class="str">"%d{HH:mm:ss} [%t] %-5level %logger - %msg%n"</span><span class="br">/&gt;</span>
+    <span class="br">&lt;/Console&gt;</span>
+    <span class="br">&lt;RollingFile</span> name=<span class="str">"File"</span> fileName=<span class="str">"logs/test.log"</span>
+                 filePattern=<span class="str">"logs/test-%d{yyyy-MM-dd}-%i.log.gz"</span><span class="br">&gt;</span>
+      <span class="br">&lt;PatternLayout</span> pattern=<span class="str">"%d{ISO8601} [%t] %-5level %logger - %msg%n"</span><span class="br">/&gt;</span>
+      <span class="br">&lt;Policies&gt;&lt;SizeBasedTriggeringPolicy</span> size=<span class="str">"10MB"</span><span class="br">/&gt;&lt;/Policies&gt;</span>
+    <span class="br">&lt;/RollingFile&gt;</span>
+  <span class="br">&lt;/Appenders&gt;</span>
+  <span class="br">&lt;Loggers&gt;</span>
+    <span class="br">&lt;Root</span> level=<span class="str">"INFO"</span><span class="br">&gt;</span>
+      <span class="br">&lt;AppenderRef</span> ref=<span class="str">"Console"</span><span class="br">/&gt;&lt;AppenderRef</span> ref=<span class="str">"File"</span><span class="br">/&gt;</span>
+    <span class="br">&lt;/Root&gt;</span>
+  <span class="br">&lt;/Loggers&gt;</span>
+<span class="br">&lt;/Configuration&gt;</span></code></pre></div>
+
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java — Usage</span><button class="copy-btn">Copy</button></div>
+  <pre><code><span class="kw">import</span> org.apache.logging.log4j.LogManager;
+<span class="kw">import</span> org.apache.logging.log4j.Logger;
+
+<span class="kw">public class</span> <span class="cl">LoginPage</span> <span class="kw">extends</span> <span class="cl">BasePage</span> {
+    <span class="kw">private static final</span> Logger log = LogManager.<span class="mt">getLogger</span>(LoginPage.<span class="kw">class</span>);
+
+    <span class="kw">public</span> <span class="cl">DashboardPage</span> <span class="mt">login</span>(String user, String pass) {
+        log.<span class="mt">info</span>(<span class="str">"Logging in as: {}"</span>, user);
+        <span class="mt">type</span>(usernameField, user);
+        <span class="mt">type</span>(passwordField, pass);
+        log.<span class="mt">debug</span>(<span class="str">"Clicking submit button"</span>);
+        <span class="mt">click</span>(submitBtn);
+        log.<span class="mt">info</span>(<span class="str">"Login submitted"</span>);
+        <span class="kw">return new</span> <span class="cl">DashboardPage</span>(<span class="mt">getDriver</span>());
+    }
+}
+
+<span class="cmt">// Log levels: TRACE &lt; DEBUG &lt; INFO &lt; WARN &lt; ERROR &lt; FATAL</span>
+log.<span class="mt">trace</span>(<span class="str">"Very detailed trace"</span>);
+log.<span class="mt">debug</span>(<span class="str">"Debug info"</span>);
+log.<span class="mt">info</span>(<span class="str">"General info"</span>);
+log.<span class="mt">warn</span>(<span class="str">"Warning"</span>);
+log.<span class="mt">error</span>(<span class="str">"Error occurred"</span>, exception);</code></pre></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('reporting')"><span class="dir">← Previous</span>Reporting</button>
+    <button class="nav-btn" onclick="showPage('interview')"><span class="dir">Next →</span>Interview Q&amp;A</button>
+  </div>
+</section>
+
+<!-- ==================== BDD ==================== -->
+<section class="page" id="page-bdd">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>BDD Cucumber</span></div>
+  <h1>BDD Cucumber</h1>
+  <p>Behavior Driven Development — write tests in plain English (Gherkin), backed by Java step definitions. Expected at 3+ years if your team uses BDD.</p>
+
+  <h2>🥒 Feature File</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Gherkin</span><div class="cb-meta"><span class="cb-file">login.feature</span><button class="copy-btn">Copy</button></div></div>
+  <pre><code><span class="kw">Feature:</span> Login functionality
+
+  Background:
+    Given the user is on the login page
+
+  <span class="kw">Scenario:</span> Successful login
+    When the user enters username <span class="str">"admin"</span> and password <span class="str">"pass123"</span>
+    And clicks the login button
+    Then the user should be on the dashboard
+
+  <span class="kw">Scenario Outline:</span> Login with multiple users
+    When the user enters username <span class="str">"&lt;username&gt;"</span> and password <span class="str">"&lt;password&gt;"</span>
+    And clicks the login button
+    Then the result should be <span class="str">"&lt;result&gt;"</span>
+    Examples:
+      | username | password | result    |
+      | admin    | pass123  | dashboard |
+      | wrong    | wrong    | error     |</code></pre></div>
+
+  <h2>☕ Step Definitions</h2>
+  <div class="cb"><div class="cb-header"><span class="cb-lang">Java</span><div class="cb-meta"><span class="cb-file">LoginSteps.java</span><button class="copy-btn">Copy</button></div></div>
+  <pre><code><span class="kw">public class</span> <span class="cl">LoginSteps</span> {
+    <span class="kw">private</span> WebDriver driver;
+    <span class="kw">private</span> LoginPage loginPage;
+
+    <span class="an">@Before</span>
+    <span class="kw">public void</span> <span class="mt">setUp</span>() {
+        WebDriverManager.<span class="mt">chromedriver</span>().<span class="mt">setup</span>();
+        driver = <span class="kw">new</span> <span class="cl">ChromeDriver</span>();
+    }
+
+    <span class="an">@Given</span>(<span class="str">"the user is on the login page"</span>)
+    <span class="kw">public void</span> <span class="mt">navigateToLogin</span>() {
+        driver.<span class="mt">get</span>(<span class="str">"https://app.com/login"</span>);
+        loginPage = <span class="kw">new</span> <span class="cl">LoginPage</span>(driver);
+    }
+
+    <span class="an">@When</span>(<span class="str">"the user enters username {string} and password {string}"</span>)
+    <span class="kw">public void</span> <span class="mt">enterCredentials</span>(String user, String pass) {
+        loginPage.<span class="mt">enterUsername</span>(user);
+        loginPage.<span class="mt">enterPassword</span>(pass);
+    }
+
+    <span class="an">@When</span>(<span class="str">"clicks the login button"</span>)
+    <span class="kw">public void</span> <span class="mt">clickLogin</span>() { loginPage.<span class="mt">clickSubmit</span>(); }
+
+    <span class="an">@Then</span>(<span class="str">"the user should be on the dashboard"</span>)
+    <span class="kw">public void</span> <span class="mt">verifyDashboard</span>() {
+        Assert.<span class="mt">assertTrue</span>(driver.<span class="mt">getCurrentUrl</span>().<span class="mt">contains</span>(<span class="str">"dashboard"</span>));
+    }
+
+    <span class="an">@After</span>
+    <span class="kw">public void</span> <span class="mt">tearDown</span>(Scenario scenario) {
+        <span class="kw">if</span>(scenario.<span class="mt">isFailed</span>()) {
+            byte[] ss = ((<span class="cl">TakesScreenshot</span>)driver).<span class="mt">getScreenshotAs</span>(OutputType.BYTES);
+            scenario.<span class="mt">attach</span>(ss, <span class="str">"image/png"</span>, <span class="str">"Failure"</span>);
+        }
+        driver.<span class="mt">quit</span>();
+    }
+}
+
+<span class="cmt">// TestRunner</span>
+<span class="an">@CucumberOptions</span>(
+    features = <span class="str">"src/test/resources/features"</span>,
+    glue     = <span class="str">"com.steps"</span>,
+    tags     = <span class="str">"@smoke"</span>,
+    plugin   = {<span class="str">"pretty"</span>,<span class="str">"html:target/cucumber-report.html"</span>}
+)
+<span class="kw">public class</span> <span class="cl">TestRunner</span> <span class="kw">extends</span> <span class="cl">AbstractTestNGCucumberTests</span> {}</code></pre></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('datadriven')"><span class="dir">← Previous</span>Data-Driven</button>
+    <button class="nav-btn" onclick="showPage('cicd')"><span class="dir">Next →</span>CI/CD</button>
+  </div>
+</section>
+
+<!-- ==================== INTERVIEW ==================== -->
+<section class="page" id="page-interview">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Interview Q&amp;A</span></div>
+  <h1>Interview Q&amp;A — 3-4 Years Level</h1>
+  <p>100+ questions. Categorized by topic. The <span class="pill p-yellow">Mid</span> and <span class="pill p-red">Adv</span> ones are most asked at your level.</p>
+
+  <h2>☕ Java OOP &amp; Core</h2>
+  <div class="acc-wrap">
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What are the 4 pillars of OOP? Give automation examples.<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>Encapsulation</strong>: Page class fields are private, accessed via methods. <strong>Inheritance</strong>: LoginPage extends BasePage — reuses click(), type(), wait logic. <strong>Polymorphism</strong>: <code>WebDriver driver = new ChromeDriver()</code> — one interface, multiple browser implementations. <strong>Abstraction</strong>: BasePage hides wait/retry logic, exposes simple <code>click(element)</code> method.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What is the difference between Abstract class and Interface?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>Interface</strong>: All methods abstract by default (Java 8 adds default/static methods). Variables are public static final. Supports multiple implementation. Use for capability contracts (WebDriver, TakesScreenshot).<br><br><strong>Abstract Class</strong>: Can have concrete + abstract methods. Has constructors. Single inheritance only. Use for shared base behavior — BasePage, BaseTest.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What are Java 8 features you use in your automation?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>Lambda</strong>: Fluent wait conditions, forEach loops — <code>rows.forEach(r -> log.info(r.getText()))</code>. <strong>Streams</strong>: Filter visible elements, map to text — <code>elements.stream().filter(WebElement::isDisplayed).map(WebElement::getText).collect(Collectors.toList())</code>. <strong>Optional</strong>: Safe config reading without NPE — <code>Optional.ofNullable(props.get(key)).orElseThrow()</code>. <strong>Method References</strong>: <code>WebElement::getText</code>, <code>System.out::println</code>.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What is ThreadLocal and why do you use it in parallel tests?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">ThreadLocal creates a separate copy of a variable for each thread. Without it, multiple parallel test threads would share one WebDriver instance — causing race conditions and test interference.<br><br><code>private static ThreadLocal&lt;WebDriver&gt; driver = new ThreadLocal&lt;&gt;();</code><br>Set: <code>driver.set(new ChromeDriver())</code>. Get: <code>driver.get()</code>. Remove in teardown: <code>driver.remove()</code> to prevent memory leaks.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>HashMap vs LinkedHashMap vs TreeMap — when to use what?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>HashMap</strong>: O(1) get/put. No order guarantee. Best for most cases when order doesn't matter.<br><strong>LinkedHashMap</strong>: Maintains insertion order. Slightly slower. Use when you need ordered iteration (e.g., test data sequence).<br><strong>TreeMap</strong>: Sorted by key (natural order or Comparator). O(log n). Use when you need sorted keys.<br><br>In automation: HashMap for config properties, LinkedHashMap for ordered test data.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>What is the difference between checked and unchecked exceptions?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>Checked</strong>: Subclasses of Exception (not RuntimeException). Must be handled with try-catch or declared with throws. Examples: IOException, SQLException. Compiler enforces handling.<br><br><strong>Unchecked (Runtime)</strong>: Subclasses of RuntimeException. No forced handling. Examples: NullPointerException, NoSuchElementException, StaleElementReferenceException.<br><br>Most Selenium exceptions are unchecked — NoSuchElementException, StaleElementReferenceException, TimeoutException.</div></div>
+  </div>
+
+  <h2>🌐 Selenium WebDriver</h2>
+  <div class="acc-wrap">
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>Difference between driver.close() and driver.quit()?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><code>driver.close()</code>: Closes the current focused browser window. If there are multiple windows, the session remains active. <br><code>driver.quit()</code>: Closes ALL browser windows opened during the test and destroys the WebDriver session completely. Always use quit() in @AfterMethod/@AfterClass to prevent orphaned browser processes.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-basic">Basic</span>What is StaleElementReferenceException and how do you handle it?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">Occurs when the DOM is updated AFTER you found the element reference — the element is "detached" from the DOM. Causes: page navigation, AJAX updates, JS re-renders, frame switches.<br><br>Fixes: (1) Re-find the element after DOM change. (2) Use <code>ExpectedConditions.refreshed()</code>. (3) Use PageFactory — re-initializes elements each access. (4) Use <code>StaleElementReferenceException</code> in FluentWait <code>.ignoring()</code>. (5) Retry logic.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>Explain the difference between Implicit, Explicit, and Fluent Wait.<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>Implicit</strong>: Global wait, set once, applies to all findElement calls. Simple but inflexible. Cannot check specific conditions. Default polling 250ms. <br><strong>Explicit</strong>: Per-element wait with specific ExpectedConditions. Most precise. Recommended approach. Default polling 500ms.<br><strong>Fluent</strong>: Extends Explicit — lets you set custom polling interval and ignore specific exceptions. Use for elements that appear at unpredictable intervals.<br><br>⚠️ Never mix Implicit + Explicit — causes double-timeout issues.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>How do you handle dynamic elements whose ID changes on every page load?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">(1) Use <code>contains()</code> in XPath: <code>//input[contains(@id,'username')]</code> if part of ID is stable.<br>(2) Use CSS attribute contains: <code>input[id*='user']</code><br>(3) Use another stable attribute: name, placeholder, data-testid<br>(4) Use text: <code>//button[text()='Submit']</code><br>(5) Use relative locators (Selenium 4) — find relative to nearby stable element.<br>(6) Request devs to add data-testid attributes.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>How does the Page Object Model work? What are its benefits?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">Each web page maps to a Java class. The class contains all element locators (as @FindBy fields) and action methods (login(), clickSubmit()). Tests use page class methods — not direct WebDriver calls.<br><br>Benefits: Single point of change for locators. Reusable across tests. Cleaner tests (no locators in test code). Easier debugging. Better team collaboration (devs know page contracts).</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>How do you design a framework that supports multiple browsers and environments?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>Browser</strong>: DriverFactory reads browser from System property (<code>-Dbrowser=firefox</code>) or testng.xml @Parameters. Creates appropriate WebDriver instance. Uses WebDriverManager for driver management.<br><br><strong>Environment</strong>: ConfigReader loads <code>config-{env}.properties</code> based on <code>-Denv=staging</code>. Each file has base.url, credentials etc.<br><br><strong>Parallel</strong>: ThreadLocal&lt;WebDriver&gt; in DriverFactory. testng.xml: <code>parallel="methods" thread-count="4"</code>. Each thread gets its own driver.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>How do you handle flaky tests?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">(1) <strong>Root cause first</strong>: Is it a timing issue (fix with explicit wait), data issue, or environment issue?<br>(2) <strong>Replace Thread.sleep with explicit waits</strong> — wait for actual conditions<br>(3) <strong>IRetryAnalyzer</strong> — auto-retry flaky tests 1-2 times<br>(4) <strong>Wait for AJAX</strong> — wait for loaders/spinners to disappear<br>(5) <strong>Scroll to element</strong> before interacting<br>(6) <strong>JS click</strong> for click-intercepted issues<br>(7) <strong>Stable locators</strong> — avoid brittle XPaths<br>(8) <strong>Test isolation</strong> — each test creates its own state</div></div>
+  </div>
+
+  <h2>🏗️ Framework Design</h2>
+  <div class="acc-wrap">
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>How did you implement parallel execution in your framework?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">In testng.xml: <code>parallel="methods" thread-count="4"</code>. WebDriver is stored in <code>ThreadLocal&lt;WebDriver&gt;</code> in DriverFactory — ensures each thread gets its own browser instance. ExtentReports tests stored in ThreadLocal&lt;ExtentTest&gt; for thread-safe report logging. Remove ThreadLocal in @AfterMethod to prevent memory leaks.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>What is ITestListener and how have you used it?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">ITestListener is a TestNG interface for intercepting test events: onTestStart, onTestSuccess, onTestFailure, onTestSkipped. Implementation: create class implementing ITestListener, register in testng.xml or @Listeners annotation.<br><br>Use cases: auto-screenshot on failure, ExtentReport logging, sending Slack/email notifications, logging test timings.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>How do you read test data from multiple sources?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>Excel</strong>: Apache POI — XSSFWorkbook reads .xlsx files. ExcelUtils wrapper returns Object[][].<br><strong>JSON</strong>: Jackson ObjectMapper — readValue() into POJO list, feed to @DataProvider.<br><strong>CSV</strong>: BufferedReader reads lines, split(",") for values.<br><strong>Database</strong>: JDBC connection, execute SELECT, iterate ResultSet.<br><strong>Config</strong>: Properties file via ConfigReader singleton.<br><br>All sources feed into TestNG @DataProvider as Object[][] for data-driven execution.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>How do you generate HTML reports in your framework?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>ExtentReports</strong>: ExtentManager creates singleton. TestListener's onTestStart creates ExtentTest (in ThreadLocal). onTestSuccess logs pass. onTestFailure captures screenshot as Base64 + attaches to report. onFinish calls extent.flush().<br><br><strong>Allure</strong>: Add @Step annotations to page methods. @Attachment for screenshots. allure-maven-plugin generates report: <code>mvn allure:report</code>.<br><br>Both integrate with Jenkins for CI reporting.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>How do you integrate Selenium tests with Jenkins CI/CD?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">Declarative Jenkinsfile: stages for Checkout → Build → Test → Publish Report. Test stage: <code>mvn test -Dbrowser=${params.BROWSER} -Denv=${params.ENV}</code>. Post-always: publish JUnit XML results. Post-failure: email notifications.<br><br>Headless execution in CI: ChromeOptions with <code>--headless=new --no-sandbox --disable-dev-shm-usage</code>. Docker agent with selenium/standalone-chrome image avoids driver installation issues.</div></div>
+  </div>
+
+  <h2>🧪 TestNG Questions</h2>
+  <div class="acc-wrap">
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What is the difference between @BeforeMethod and @BeforeClass?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><code>@BeforeClass</code>: Runs once before all test methods in the class. Use for expensive one-time setup (launching browser, DB connection).<br><code>@BeforeMethod</code>: Runs before EACH test method. Use for per-test setup (navigate to URL, login, clear state).<br><br>In parallel testing: @BeforeMethod is safer because each thread gets its own setup/teardown cycle.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-mid">Mid</span>What is the difference between Hard Assert and Soft Assert?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body"><strong>Hard Assert</strong> (org.testng.Assert): Stops test execution immediately on first failure. Use when subsequent steps depend on this assertion passing.<br><br><strong>Soft Assert</strong> (org.testng.asserts.SoftAssert): Collects all failures, continues execution. Must call <code>softAssert.assertAll()</code> at the end — reports all failures. Use when you want to verify multiple independent conditions in one test.</div></div>
+
+    <div class="acc"><button class="acc-hdr"><span class="acc-diff diff-adv">Adv</span>How do you implement data-driven testing with @DataProvider returning Excel data?<span class="acc-arrow">▼</span></button>
+    <div class="acc-body">Create ExcelUtils class using Apache POI. readData(filePath, sheetName) opens workbook, iterates rows/columns (skip row 0 as header), returns Object[][]. Create @DataProvider that calls ExcelUtils.readData(). Annotate @Test with dataProvider="name". TestNG calls the test once per row, passing column values as parameters. Use parallel=true on @DataProvider for faster execution.</div></div>
+  </div>
+
+  <h2>⚡ Quick-Fire Round</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Question</th><th>Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Default polling interval of WebDriverWait?</td><td>500ms</td></tr>
+      <tr><td>Selenium 4 protocol?</td><td>W3C WebDriver Standard</td></tr>
+      <tr><td>How to check element exists without exception?</td><td><code>!findElements(By).isEmpty()</code></td></tr>
+      <tr><td>What does @FindBy do?</td><td>PageFactory annotation for lazy element initialization</td></tr>
+      <tr><td>What is Selenium Grid used for?</td><td>Parallel tests on multiple browsers/machines</td></tr>
+      <tr><td>ThreadLocal purpose in automation?</td><td>Separate WebDriver per thread for parallel tests</td></tr>
+      <tr><td>What is IRetryAnalyzer?</td><td>TestNG interface to auto-retry failed tests</td></tr>
+      <tr><td>Difference between <code>get()</code> and <code>navigate().to()</code>?</td><td>Functionally same; navigate() also supports back/forward/refresh</td></tr>
+      <tr><td>How to run tests from command line?</td><td><code>mvn test -Dbrowser=chrome -Denv=qa</code></td></tr>
+      <tr><td>What is Gherkin?</td><td>Plain-English language for Cucumber feature files (Given/When/Then)</td></tr>
+      <tr><td>What is ExtentReports?</td><td>HTML test reporting library for Selenium tests</td></tr>
+      <tr><td>What is Log4j used for in automation?</td><td>Structured logging — debug actions, errors, test flow</td></tr>
+      <tr><td>What is driver.manage().deleteAllCookies() used for?</td><td>Clear session/auth cookies between tests</td></tr>
+      <tr><td>How to handle SSL certificate errors?</td><td><code>ChromeOptions.setAcceptInsecureCerts(true)</code></td></tr>
+      <tr><td>What is Abstract XPath vs Relative XPath?</td><td>Absolute starts from /html, Relative starts from //. Always use relative.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('logging')"><span class="dir">← Previous</span>Logging</button>
+    <button class="nav-btn" onclick="showPage('cheatsheet')"><span class="dir">Next →</span>Cheat Sheet</button>
+  </div>
+</section>
+
+<!-- ==================== CHEAT SHEET ==================== -->
+<section class="page" id="page-cheatsheet">
+  <div class="bc"><span>Home</span><span class="sep">›</span><span>Cheat Sheet</span></div>
+  <h1>Cheat Sheet — Quick Reference</h1>
+  <p>Print this page before your interview. All the most-used code patterns in one place.</p>
+
+  <div class="cheat-grid">
+    <div class="cheat-card">
+      <div class="cheat-card-title">Driver Setup</div>
+      <pre><code>WebDriverManager.chromedriver().setup();
+WebDriver d = new ChromeDriver();
+d.manage().window().maximize();
+d.manage().timeouts()
+  .implicitlyWait(Duration.ofSeconds(10));</code></pre>
+    </div>
+    <div class="cheat-card">
+      <div class="cheat-card-title">Explicit Wait</div>
+      <pre><code>WebDriverWait wait =
+  new WebDriverWait(d, Duration.ofSeconds(15));
+wait.until(EC.visibilityOfElementLocated(By));
+wait.until(EC.elementToBeClickable(By));
+wait.until(EC.invisibilityOfElementLocated(By));</code></pre>
+    </div>
+    <div class="cheat-card">
+      <div class="cheat-card-title">Locators</div>
+      <pre><code>By.id("id")
+By.name("name")
+By.cssSelector("input#id.class")
+By.xpath("//tag[@attr='val']")
+By.linkText("exact text")
+By.className("class")</code></pre>
+    </div>
+    <div class="cheat-card">
+      <div class="cheat-card-title">WebElement Actions</div>
+      <pre><code>el.click();
+el.sendKeys("text", Keys.ENTER);
+el.clear();
+el.getText();
+el.getAttribute("value");
+el.isDisplayed() / isEnabled() / isSelected();</code></pre>
+    </div>
+    <div class="cheat-card">
+      <div class="cheat-card-title">Select Dropdown</div>
+      <pre><code>Select s = new Select(el);
+s.selectByVisibleText("India");
+s.selectByValue("IN");
+s.selectByIndex(2);
+s.getFirstSelectedOption().getText();</code></pre>
+    </div>
+    <div class="cheat-card">
+      <div class="cheat-card-title">Alert</div>
+      <pre><code>Alert a = wait.until(EC.alertIsPresent());
+a.accept();   // OK
+a.dismiss();  // Cancel
+a.getText();
+a.sendKeys("input"); // prompt</code></pre>
+    </div>
+    <div class="cheat-card">
+      <div class="cheat-card-title">Switch Frame</div>
+      <pre><code>d.switchTo().frame("name");
+d.switchTo().frame(0);
+d.switchTo().frame(webElement);
+d.switchTo().defaultContent(); // back
+d.switchTo().parentFrame();</code></pre>
+    </div>
+    <div class="cheat-card">
+      <div class="cheat-card-title">Switch Window</div>
+      <pre><code>String parent = d.getWindowHandle();
+Set&lt;String&gt; all = d.getWindowHandles();
+for(String h : all) {
+  if(!h.equals(parent))
+    d.switchTo().window(h);
+}
+d.close(); d.switchTo().window(parent);</code></pre>
+    </div>
+    <div class="cheat-card">
+      <div class="cheat-card-title">Actions</div>
+      <pre><code>Actions a = new Actions(d);
+a.moveToElement(el).perform();   // hover
+a.doubleClick(el).perform();
+a.contextClick(el).perform();    // right-click
+a.dragAndDrop(src, tgt).perform();
+a.keyDown(Keys.CTRL).sendKeys("a")
+ .keyUp(Keys.CTRL).perform();</code></pre>
+    </div>
+    <div class="cheat-card">
+      <div class="cheat-card-title">JavaScript</div>
+      <pre><code>JavascriptExecutor js=(JavascriptExecutor)d;
+js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+js.executeScript("arguments[0].click();", el);
+js.executeScript("arguments[0].scrollIntoView(true);", el);</code></pre>
+    </div>
+    <div class="cheat-card">
+      <div class="cheat-card-title">Screenshot</div>
+      <pre><code>File f = ((TakesScreenshot)d)
+  .getScreenshotAs(OutputType.FILE);
+FileUtils.copyFile(f, new File("ss.png"));
+// Base64:
+String b64 = ((TakesScreenshot)d)
+  .getScreenshotAs(OutputType.BASE64);</code></pre>
+    </div>
+    <div class="cheat-card">
+      <div class="cheat-card-title">ThreadLocal Driver</div>
+      <pre><code>static ThreadLocal&lt;WebDriver&gt; tl
+  = new ThreadLocal&lt;&gt;();
+tl.set(new ChromeDriver()); // set
+tl.get();                   // get
+tl.remove();                // cleanup</code></pre>
+    </div>
+    <div class="cheat-card">
+      <div class="cheat-card-title">Java 8 Streams (Automation)</div>
+      <pre><code>// Get text of all visible rows
+elements.stream()
+  .filter(WebElement::isDisplayed)
+  .map(WebElement::getText)
+  .collect(Collectors.toList());
+// Find element containing text
+elements.stream()
+  .filter(e->e.getText().contains("X"))
+  .findFirst().ifPresent(e->e.click());</code></pre>
+    </div>
+    <div class="cheat-card">
+      <div class="cheat-card-title">TestNG Annotations Order</div>
+      <pre><code>@BeforeSuite → @BeforeTest
+→ @BeforeClass → @BeforeMethod
+→ @Test
+→ @AfterMethod → @AfterClass
+→ @AfterTest → @AfterSuite</code></pre>
+    </div>
+    <div class="cheat-card">
+      <div class="cheat-card-title">XPath Cheat</div>
+      <pre><code>//tag[@attr='val']
+//tag[contains(@attr,'part')]
+//tag[starts-with(@attr,'x')]
+//tag[text()='exact']
+//label/following-sibling::input
+//span[@x='y']/..         (parent)
+(//input)[last()]
+(//input[@type='text'])[2]</code></pre>
+    </div>
+    <div class="cheat-card">
+      <div class="cheat-card-title">Maven Test Commands</div>
+      <pre><code>mvn clean test
+mvn test -Dbrowser=firefox
+mvn test -Denv=staging
+mvn test -Dgroups=smoke
+mvn test -DsuiteXmlFile=reg.xml
+mvn test -Dheadless=true</code></pre>
+    </div>
+  </div>
+
+  <h2>🎯 Key Interview Tips for 3-4 Years</h2>
+  <div class="box green"><div class="box-title">✅ Must-Know Talking Points</div>
+  <ul style="line-height:2.2">
+    <li>Always say: "We used ThreadLocal for parallel execution"</li>
+    <li>Always mention: "ITestListener for auto-screenshot on failure"</li>
+    <li>Always say: "We used ConfigReader to support multiple environments via -Denv"</li>
+    <li>Always mention: "WebDriverManager to auto-manage driver binaries"</li>
+    <li>For Java 8: "We use Streams to filter and map WebElements, Lambda for wait conditions"</li>
+    <li>Framework: "Hybrid — POM + Data-Driven + TestNG + ExtentReports"</li>
+    <li>CI/CD: "Jenkins declarative pipeline — builds trigger on PR merge to main"</li>
+    <li>Data: "Excel via Apache POI, JSON via Jackson, fed through @DataProvider"</li>
+  </ul></div>
+
+  <div class="nav-btns">
+    <button class="nav-btn" onclick="showPage('interview')"><span class="dir">← Previous</span>Interview Q&amp;A</button>
+    <button class="nav-btn" onclick="showPage('home')"><span class="dir">↑ Back to</span>Home</button>
+  </div>
+</section>
+
+</main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
